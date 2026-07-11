@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Botic Odontologia | Dra. Amanda Marques | Odontologia estética em São Paulo</title>
+<meta name="description" content="Odontologia estética com a Dra. Amanda Marques em São Paulo. Lentes, clareamento, limpeza e check-up. Sem medo, sem julgamento, sem pressa. Inauguração 20 de agosto.">
+<!-- NOINDEX until CRO number + real address are filled in. Flip to "index,follow" only after that. -->
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://boticaestetica.com/homepage/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Botic Odontologia | Dra. Amanda Marques">
+<meta property="og:description" content="O sorriso é a coluna que falta na sua rotina de beleza. Odontologia estética em São Paulo.">
+<meta property="og:url" content="https://boticaestetica.com/homepage/">
+<meta property="og:locale" content="pt_BR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,500;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nude:#EFE3DB; --olive:#656237; --olive-deep:#4C4A28; --cream:#E9DFD4; --cream-hi:#FBF6EF;
+  --esp:#141210; --ink:#141210; --rose:#C9A38C; --brown:#7B5743;
+  --sans:'Inter',-apple-system,system-ui,sans-serif; --serif:'Playfair Display',Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--esp);background:var(--esp);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+section{padding:9vh 8% 10vh;position:relative}
+.g-esp{background:var(--esp);color:var(--cream)}
+.g-nude{background:var(--nude);color:var(--esp)}
+.g-cream{background:linear-gradient(180deg,var(--cream) 0%,var(--cream-hi) 100%);color:var(--esp)}
+.g-olive{background:linear-gradient(180deg,var(--olive-deep) 0%,var(--olive) 100%);color:var(--cream)}
+
+.mono{font-family:var(--serif);font-style:italic;font-weight:600;letter-spacing:.02em;text-align:center;font-size:1.7rem;opacity:.92}
+.mono small{display:block;font-family:var(--sans);font-style:normal;font-weight:400;font-size:.56rem;letter-spacing:.42em;text-transform:uppercase;margin-top:.2rem;opacity:.75}
+.eyebrow{font-size:.66rem;letter-spacing:.38em;text-transform:uppercase;font-weight:600;opacity:.62;margin-bottom:1.1rem}
+h1{font-weight:300;font-size:clamp(2.1rem,6.2vw,4.4rem);line-height:1.12;letter-spacing:-.01em}
+h2{font-weight:300;font-size:clamp(1.7rem,4.6vw,3.1rem);line-height:1.15;margin-bottom:1.4rem}
+h1 b,h2 b{font-weight:700}
+h1 i,h2 i,.si{font-family:var(--serif);font-style:italic;font-weight:500}
+.lead{font-size:clamp(1rem,2.1vw,1.22rem);font-weight:300;max-width:44em;opacity:.9}
+.hr{width:44px;height:2px;background:var(--rose);border:none;margin:1.6rem 0}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rv.on{opacity:1;transform:none}
+
+/* ---- buttons ---- */
+.ctarow{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.4rem;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 1.8rem;border-radius:999px;font-family:var(--sans);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;cursor:pointer;text-decoration:none;transition:all .25s;border:1px solid transparent}
+.btn-p{background:var(--rose);color:var(--esp);border-color:var(--rose)}
+.btn-p:hover{background:#d8b39d;border-color:#d8b39d;transform:translateY(-2px)}
+.btn-s{background:transparent;color:inherit;border-color:currentColor}
+.btn-s:hover{background:var(--rose);border-color:var(--rose);color:var(--esp)}
+.btn svg{width:17px;height:17px;flex-shrink:0}
+.microcopy{font-size:.78rem;opacity:.7;margin-top:1rem;font-weight:300}
+
+/* ---- cards ---- */
+.grid{display:grid;gap:1.1rem;margin-top:2rem}
+.cards2{grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))}
+.cards3{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.card{border:1px solid rgba(125,110,95,.28);border-radius:14px;padding:1.6rem 1.5rem;background:rgba(255,255,255,.22)}
+.g-esp .card,.g-olive .card{background:rgba(255,255,255,.05);border-color:rgba(233,223,212,.22)}
+.card h3{font-weight:700;font-size:1.04rem;margin-bottom:.55rem}
+.card p{font-size:.9rem;font-weight:300;opacity:.9}
+.card .note{font-size:.82rem;margin-top:.7rem;padding-top:.7rem;border-top:1px solid rgba(125,110,95,.22);opacity:.85}
+.g-esp .card .note,.g-olive .card .note{border-color:rgba(233,223,212,.2)}
+.knum{font-family:var(--serif);font-style:italic;font-weight:600;font-size:2.1rem;line-height:1;display:block;margin-bottom:.45rem;color:var(--brown)}
+.g-esp .knum,.g-olive .knum{color:var(--rose)}
+
+/* ---- lists ---- */
+.blist{margin:1.8rem 0;display:grid;gap:.8rem;max-width:44em}
+.blist div{display:flex;gap:.85rem;font-size:.97rem;font-weight:300}
+.blist div::before{content:"—";color:var(--rose);font-weight:700;flex-shrink:0}
+.story p{font-size:clamp(.98rem,1.9vw,1.1rem);font-weight:300;max-width:44em;margin-bottom:1.05rem;opacity:.92}
+
+/* ---- accordion (perguntas) ---- */
+.acc{border:1px solid rgba(125,110,95,.3);border-radius:14px;margin-bottom:.8rem;overflow:hidden;background:rgba(255,255,255,.25);max-width:52em}
+.acc>button{all:unset;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;gap:1rem;width:100%;padding:1.15rem 1.3rem;cursor:pointer}
+.acc>button h3{font-size:1rem;font-weight:700}
+.acc .chev{transition:transform .35s;color:var(--brown);flex-shrink:0;font-size:.8rem}
+.acc.open .chev{transform:rotate(180deg)}
+.acc .bd{max-height:0;overflow:hidden;transition:max-height .45s ease;padding:0 1.3rem}
+.acc.open .bd{max-height:900px;padding:0 1.3rem 1.3rem}
+.acc .bd p{font-size:.92rem;font-weight:300;opacity:.92;margin-bottom:.7rem}
+.acc .bd p:last-child{margin-bottom:0}
+.acc .bd a{color:var(--brown);font-weight:600}
+
+/* ---- steps ---- */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1.4rem;margin-top:2.2rem}
+.step{position:relative;padding-top:1.2rem;border-top:2px solid var(--rose)}
+.step .n{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--brown);display:block;margin-bottom:.3rem}
+.g-esp .step .n,.g-olive .step .n{color:var(--rose)}
+.step h3{font-size:1rem;font-weight:700;margin-bottom:.4rem}
+.step p{font-size:.89rem;font-weight:300;opacity:.9}
+
+/* ---- info / where ---- */
+.inforow{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1.6rem;margin-top:2rem}
+.info h3{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;opacity:.6;margin-bottom:.6rem}
+.info p{font-size:1rem;font-weight:300}
+.mapwrap{margin-top:2rem;border-radius:14px;overflow:hidden;border:1px solid rgba(125,110,95,.3);min-height:280px;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center}
+.mapwrap iframe{width:100%;height:340px;border:0;display:block}
+
+/* ---- pending placeholder styling (dev only) ---- */
+.pend{background:rgba(201,163,140,.3);border-bottom:1px dashed var(--brown);padding:0 .25rem;border-radius:3px}
+
+/* ---- sticky whatsapp ---- */
+.float{position:fixed;bottom:20px;right:20px;z-index:80;display:inline-flex;align-items:center;gap:.55rem;padding:.9rem 1.35rem;border-radius:999px;background:var(--esp);color:var(--cream);text-decoration:none;font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 10px 30px rgba(20,18,16,.35);transition:transform .25s,background .25s}
+.float:hover{transform:translateY(-3px);background:var(--brown)}
+.float svg{width:19px;height:19px}
+
+/* ---- header ---- */
+.topbar{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(120,110,100,.2)}
+.topbar i{display:block;height:100%;width:0;background:var(--rose);transition:width .2s}
+
+/* ---- footer ---- */
+footer{background:var(--esp);color:var(--cream);padding:6vh 8% 4vh;font-size:.85rem;font-weight:300}
+footer .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:2rem;margin-bottom:2.5rem}
+footer h4{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;font-weight:700;opacity:.55;margin-bottom:.8rem}
+footer a{color:var(--cream);text-decoration:none;opacity:.85}
+footer a:hover{color:var(--rose)}
+footer p{opacity:.85;margin-bottom:.35rem}
+.legal{border-top:1px solid rgba(233,223,212,.18);padding-top:1.6rem;font-size:.74rem;opacity:.6;line-height:1.7}
+
+@media(max-width:640px){
+  section{padding:7vh 7% 8vh}
+  .float{bottom:14px;right:14px;padding:.8rem 1.1rem;font-size:.7rem}
+  .ctarow{gap:.7rem}
+  .btn{padding:.9rem 1.4rem;font-size:.74rem}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar"><i id="prog"></i></div>
+
+<!-- ============ HERO ============ -->
+<section class="g-esp" id="inicio" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center">
+  <div class="mono rv">AM<small>Botic Odontologia</small></div>
+  <div style="margin-top:auto;padding-top:8vh">
+    <p class="eyebrow rv">São Paulo · Inauguração 20 de agosto</p>
+    <h1 class="rv">O sorriso é a coluna que falta<br>na sua <i>rotina de beleza</i>.</h1>
+    <hr class="hr rv">
+    <p class="lead rv">Odontologia estética com a Dra. Amanda Marques. Sem medo, sem julgamento, sem pressa. E sem você descobrir o valor sentada na cadeira.</p>
+    <div class="ctarow rv">
+      <a class="btn btn-p" data-wa="HERO-SORRISO" href="#">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.5-.4M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 18.2c-1.6 0-3.2-.4-4.6-1.3l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2"/></svg>
+        Falar com a Amanda
+      </a>
+      <a class="btn btn-s" href="#agenda">Agendar avaliação</a>
+    </div>
+    <p class="microcopy rv">Quem responde é a Amanda. Não é robô.</p>
+  </div>
+</section>
+
+<!-- ============ AMANDA ============ -->
+<section class="g-nude" id="amanda">
+  <p class="eyebrow rv">Quem vai cuidar de você</p>
+  <h2 class="rv">Prazer, eu sou a <i>Amanda</i>.</h2>
+  <p class="microcopy rv" style="margin-top:-.6rem;margin-bottom:1.4rem">Cirurgiã-dentista. <span class="pend" data-fill="cro">CRO-SP [número]</span>.</p>
+  <div class="story rv">
+    <p>Sou dentista, formada e apaixonada por uma parte do corpo que a maioria das pessoas só lembra quando dói. Passei anos vendo gente boa adiar consulta por vergonha, por medo, ou porque uma vez alguém falou alto demais sobre a boca dela.</p>
+    <p>A Botic nasceu disso. Eu queria um lugar onde a pessoa entra sem prender a respiração.</p>
+  </div>
+  <div class="blist rv">
+    <div>Nas primeiras semanas, quem responde no WhatsApp sou eu. A avaliação é comigo, do começo ao fim.</div>
+    <div>Toda proposta sai da sua avaliação, nunca de uma tabela pronta.</div>
+    <div>Se o melhor pra você hoje for só uma limpeza e voltar daqui a um ano, é isso que eu vou te dizer.</div>
+    <div>Eu não prometo resultado. Eu prometo que você vai entender exatamente o que está acontecendo na sua boca, e decidir com calma.</div>
+  </div>
+  <div class="ctarow rv">
+    <a class="btn btn-p" data-wa="AMANDA-SORRISO" href="#">Me conta seu caso</a>
+  </div>
+</section>
+
+<!-- ============ SERVIÇOS ============ -->
+<section class="g-cream" id="tratamentos">
+  <p class="eyebrow rv">O que a gente faz</p>
+  <h2 class="rv">Começa pequeno.<br>Cresce só se <i>fizer sentido</i>.</h2>
+  <p class="lead rv">Ninguém precisa entrar aqui já decidindo um plano grande. Quase toda história boa começa por uma limpeza bem-feita e uma conversa honesta.</p>
+
+  <div class="grid cards2 rv">
+    <div class="card">
+      <span class="knum">01</span>
+      <h3>Limpeza e check-up completo</h3>
+      <p>O primeiro passo, pra quase todo mundo. Uma hora comigo: eu conheço sua boca de perto, você sai sabendo exatamente o que faz sentido, e o que não faz.</p>
+      <p class="note">É por aqui que eu recomendo começar, mesmo que seu sonho seja outro.</p>
+    </div>
+    <div class="card">
+      <span class="knum">02</span>
+      <h3>Lentes e resinas</h3>
+      <p>Quando o caso permite, eu trabalho com técnicas de mínimo desgaste. Quando não permite, eu te explico exatamente por quê, antes de qualquer coisa começar. A pergunta que todo mundo faz ("precisa lixar meu dente?") tem resposta, e ela depende do seu caso, não de um catálogo.</p>
+      <p class="note">Te explico o porquê, com o seu dente na frente, na avaliação.</p>
+    </div>
+    <div class="card">
+      <span class="knum">03</span>
+      <h3>Clareamento</h3>
+      <p>O pedido mais comum, e o que gera mais dúvida. Existe mais de um caminho, e o que faz sentido depende da sua sensibilidade, do seu esmalte e da sua rotina.</p>
+      <p class="note">Nem todo mundo precisa. Eu te falo se for o seu caso.</p>
+    </div>
+    <div class="card">
+      <span class="knum">04</span>
+      <h3>Cronograma da noiva</h3>
+      <p>Tem data marcada? Então a gente trabalha de trás pra frente. Cada etapa tem um tempo, e apressar sorriso é como apressar bolo: dá pra ver.</p>
+      <p class="note">Me manda o mês do casamento que eu te monto o caminho.</p>
+    </div>
+  </div>
+  <div class="ctarow rv">
+    <a class="btn btn-p" data-wa="SERVICOS-SORRISO" href="#">Falar sobre o meu caso</a>
+    <a class="btn btn-s" data-wa="SERVICOS-NOIVA" href="#">Sou noiva, tenho data</a>
+  </div>
+</section>
+
+<!-- ============ COMO FUNCIONA ============ -->
+<section class="g-nude" id="como-funciona">
+  <p class="eyebrow rv">Como funciona</p>
+  <h2 class="rv">Três passos.<br>Nenhuma <i>surpresa</i>.</h2>
+  <div class="steps rv">
+    <div class="step">
+      <span class="n">1</span>
+      <h3>Você me chama no WhatsApp</h3>
+      <p>Pode ser uma dúvida solta, uma vontade antiga ou só curiosidade. Tudo vale. Quem responde sou eu, normalmente no mesmo dia.</p>
+    </div>
+    <div class="step">
+      <span class="n">2</span>
+      <h3>A gente marca a sua avaliação</h3>
+      <p>Você vem à Botic. Eu escuto sua história, olho sua boca com calma e explico o que vejo, em português, não em odontês.</p>
+    </div>
+    <div class="step">
+      <span class="n">3</span>
+      <h3>Você recebe um plano seu</h3>
+      <p>Com etapas, com tempo e com os valores explicados antes de qualquer coisa começar. Você decide em casa, sem ninguém te olhando.</p>
+    </div>
+  </div>
+  <div class="ctarow rv">
+    <a class="btn btn-p" data-wa="COMO-SORRISO" href="#">Começar pelo primeiro passo</a>
+  </div>
+</section>
+
+<!-- ============ PREÇO (o diferencial) ============ -->
+<section class="g-olive" id="valores">
+  <p class="eyebrow rv">Valores</p>
+  <h2 class="rv">Por que não tem <i>preço</i> nesta página.</h2>
+  <div class="story rv">
+    <p>Não é mistério, e muito menos estratégia pra te prender aqui. É que eu ainda não conheço a sua boca, e qualquer número que eu colocasse nesta página seria chute. Chute em tratamento sai caro dos dois lados.</p>
+    <p>O que eu posso fazer é te contar, com todas as letras, o que define o valor do seu:</p>
+  </div>
+  <div class="blist rv">
+    <div>Quantos dentes realmente entram no plano. Quase sempre são menos do que a pessoa imagina.</div>
+    <div>A saúde da sua boca hoje. Às vezes o primeiro passo é só uma limpeza, e o resto pode esperar.</div>
+    <div>O material e a técnica que fazem sentido pro seu caso, não pro caso da influenciadora.</div>
+    <div>Em quantas etapas você quer distribuir. Isso é conversa, não imposição.</div>
+  </div>
+  <div class="story rv">
+    <p><b>E o combinado é este:</b> a faixa de investimento eu te falo no WhatsApp, com todas as letras, antes de você pisar aqui. O valor fechado sai na avaliação, porque é ali que eu vejo o que o seu caso realmente pede, e você leva por escrito para decidir em casa. Você não vai descobrir preço sentada na cadeira.</p>
+  </div>
+  <div class="ctarow rv">
+    <a class="btn btn-p" data-wa="PRECO-SORRISO" href="#">Me pergunta sobre valores</a>
+  </div>
+  <p class="microcopy rv">Pode perguntar sem rodeios. Perguntar não te obriga a nada.</p>
+</section>
+
+<!-- ============ PERGUNTAS REAIS ============ -->
+<section class="g-cream" id="perguntas">
+  <p class="eyebrow rv">Perguntas reais</p>
+  <h2 class="rv">As coisas que você <i>quer</i> perguntar<br>e não pergunta.</h2>
+  <p class="lead rv" style="margin-bottom:2.4rem">Estas são, palavra por palavra, as dúvidas que mais aparecem. Nenhuma delas é boba.</p>
+
+  <div class="acc rv">
+    <button><h3>Lente estraga o dente?</h3><span class="chev">▾</span></button>
+    <div class="bd">
+      <p>Essa é <i>a</i> pergunta, e ela é justa, porque muita gente já viu história ruim. A resposta honesta: depende de quanto se desgasta, e isso depende da técnica e do seu caso.</p>
+      <p>Existem abordagens de mínimo desgaste, em que se remove muito pouco ou quase nada de estrutura dental. Elas não servem para todos os casos. Isso é uma decisão clínica, não uma preferência de catálogo, e só dá para saber depois de examinar a sua boca.</p>
+      <p>Por isso eu não respondo isso por foto, nem por Instagram. Eu respondo com o seu dente na minha frente, te mostrando exatamente o que seria feito e o que <b>não</b> seria.</p>
+    </div>
+  </div>
+
+  <div class="acc rv">
+    <button><h3>Tenho medo de dentista. Muito medo.</h3><span class="chev">▾</span></button>
+    <div class="bd">
+      <p>Então você já fez a parte mais difícil, que é dizer isso em voz alta. Me conta no WhatsApp antes de vir. Sério: escreve "tenho medo" e pronto, o resto eu conduzo.</p>
+      <p>A gente ajusta o ritmo, explica cada passo antes de fazer, combina um sinal pra você me parar quando quiser. Você manda no tempo, não eu.</p>
+      <p>Ninguém aqui vai te dar sermão sobre o tempo que você passou sem vir. Esse julgamento não existe na minha cadeira.</p>
+    </div>
+  </div>
+
+  <div class="acc rv">
+    <button><h3>Vai ficar fake?</h3><span class="chev">▾</span></button>
+    <div class="bd">
+      <p>Só se você quiser. E ainda assim eu vou te fazer umas perguntas antes.</p>
+      <p>Dente natural tem textura, tem translucidez na ponta, tem uma leve assimetria que o olho reconhece mesmo sem saber explicar. Sorriso que parece "colado" quase sempre é resultado de branco demais, tamanho igual demais e formato copiado de outra pessoa.</p>
+      <p>O ponto de partida do seu plano é o seu rosto. Não é uma referência que veio no print.</p>
+    </div>
+  </div>
+
+  <div class="acc rv">
+    <button><h3>Quanto custa?</h3><span class="chev">▾</span></button>
+    <div class="bd">
+      <p>No WhatsApp eu consigo te dar uma faixa de investimento assim que entender o que você procura, sem enrolação e sem compromisso nenhum. O valor fechado só sai depois da avaliação presencial, porque é ali que eu vejo o que o seu caso realmente pede.</p>
+      <p>O que eu não faço é colocar tabela nesta página. Preço sem exame é chute, e chute não ajuda ninguém a decidir. <a href="#valores">Expliquei direitinho aqui em cima.</a></p>
+    </div>
+  </div>
+
+  <div class="acc rv">
+    <button><h3>Quanto tempo dura? E a manutenção, é uma armadilha?</h3><span class="chev">▾</span></button>
+    <div class="bd">
+      <p>Nada que a gente coloca na sua boca é para sempre. Não existe material eterno, e qualquer previsão de durabilidade é uma estimativa, nunca uma promessa. Ela depende do material, da sua mordida e dos seus hábitos (apertar os dentes à noite, roer unha, gelo, abrir garrafa. Sim, eu vou perguntar.)</p>
+      <p>Manutenção existe, é normal e não deveria ser surpresa. Aqui, o plano de manutenção é combinado <b>antes</b> de começar: com que frequência a gente se vê depois e o que isso significa.</p>
+    </div>
+  </div>
+
+  <div class="acc rv">
+    <button><h3>Como eu sei se posso confiar em quem vai mexer nos meus dentes?</h3><span class="chev">▾</span></button>
+    <div class="bd">
+      <p>Perguntando coisas difíceis. Eu te dou a lista, e ela vale pra qualquer dentista, inclusive pra mim:</p>
+      <p>"Quanto do meu dente você vai desgastar, em milímetros?" · "Posso ver o planejamento antes?" · "O que acontece se eu não gostar?" · "Quem faz o acompanhamento depois?" · "Qual o seu CRO?"</p>
+      <p>Você tem direito a uma resposta clara para cada uma delas, aqui e em qualquer consultório. Se você sair de uma avaliação sem entender o que foi combinado, pergunte de novo. Perguntar faz parte do tratamento.</p>
+    </div>
+  </div>
+
+  <div class="acc rv">
+    <button><h3>Faz anos que eu não vou ao dentista.</h3><span class="chev">▾</span></button>
+    <div class="bd">
+      <p>Ótimo. Você está voltando. É literalmente o meu trabalho preferido.</p>
+      <p>Recomeço aqui é bem-vindo, sem cara feia, sem "nossa, mas está assim há quanto tempo?". A gente olha o que tem, organiza por prioridade e resolve por partes. Nada de plano gigante no primeiro dia.</p>
+    </div>
+  </div>
+
+  <div class="ctarow rv">
+    <a class="btn btn-p" data-wa="FAQ-SORRISO" href="#">Minha dúvida não está aqui</a>
+  </div>
+</section>
+
+<!-- ============ ONDE / AGENDA ============ -->
+<section class="g-nude" id="agenda">
+  <p class="eyebrow rv">Onde a gente fica</p>
+  <h2 class="rv">A Botic abre em <i>20 de agosto</i>.</h2>
+  <p class="lead rv">A agenda das primeiras semanas está sendo montada agora. Se você quer uma das primeiras conversas, me chama que eu seguro o seu lugar.</p>
+
+  <div class="inforow rv">
+    <div class="info">
+      <h3>Endereço</h3>
+      <p><span class="pend" data-fill="endereco">[endereço a preencher]</span><br>São Paulo, SP</p>
+    </div>
+    <div class="info">
+      <h3>Horários</h3>
+      <p><span class="pend" data-fill="horario">[horários a preencher]</span></p>
+    </div>
+    <div class="info">
+      <h3>Responsável técnica</h3>
+      <p>Dra. Amanda Marques<br><span class="pend" data-fill="cro">CRO-SP [número]</span></p>
+    </div>
+  </div>
+
+  <!-- BOOKING EMBED SLOT: cola aqui o iframe do Cal.com / Google Agenda quando a ferramenta estiver escolhida -->
+  <div class="mapwrap rv" id="booking-slot">
+    <p style="opacity:.6;font-size:.85rem;padding:2rem;text-align:center">
+      [Agendamento online entra aqui]<br>
+      <span style="font-size:.75rem">Enquanto isso, o WhatsApp agenda mais rápido que qualquer formulário.</span>
+    </p>
+  </div>
+
+  <div class="ctarow rv">
+    <a class="btn btn-p" data-wa="AGENDA-SORRISO" href="#">Quero uma das primeiras conversas</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="fgrid">
+    <div>
+      <div class="mono" style="text-align:left;font-size:1.4rem">AM<small style="letter-spacing:.3em">Botic Odontologia</small></div>
+    </div>
+    <div>
+      <h4>Navegue</h4>
+      <p><a href="#amanda">A Amanda</a></p>
+      <p><a href="#tratamentos">Tratamentos</a></p>
+      <p><a href="#valores">Valores</a></p>
+      <p><a href="#perguntas">Perguntas reais</a></p>
+    </div>
+    <div>
+      <h4>Fale com a gente</h4>
+      <p><a data-wa="FOOTER-SORRISO" href="#">WhatsApp</a></p>
+      <p><a href="https://instagram.com/boticodontologia" target="_blank" rel="noopener">Instagram da Botic</a></p>
+      <p><a href="https://instagram.com/odontoamandamarques" target="_blank" rel="noopener">Instagram da Amanda</a></p>
+    </div>
+    <div>
+      <h4>Onde</h4>
+      <p><span class="pend" data-fill="endereco">[endereço]</span></p>
+      <p>São Paulo, SP</p>
+    </div>
+  </div>
+  <div class="legal">
+    <p>Dra. Amanda Marques. Cirurgiã-dentista. <span class="pend" data-fill="cro">CRO-SP [número]</span>. Responsável Técnica pela Botic Odontologia.</p>
+    <p>Botic Odontologia. <span class="pend" data-fill="cnpj">CNPJ [a preencher]</span>. <span class="pend" data-fill="croPj">Inscrição no CRO-SP [a preencher]</span>.</p>
+    <p>As informações desta página têm caráter informativo e não substituem uma consulta odontológica presencial. Nenhum conteúdo aqui constitui diagnóstico, indicação de tratamento ou promessa de resultado. Resultados de tratamentos odontológicos variam de pessoa para pessoa e só podem ser avaliados individualmente, após exame clínico.</p>
+    <p><a href="/politica-de-privacidade/">Política de Privacidade</a></p>
+    <p style="margin-top:.8rem">© 2026 Botic Odontologia.</p>
+  </div>
+</footer>
+
+<a class="float" data-wa="FLOAT-SORRISO" href="#">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.5-.4M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 18.2c-1.6 0-3.2-.4-4.6-1.3l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2"/></svg>
+  WhatsApp
+</a>
+
+<script>
+/* ========================================================================
+   CONFIG. Luke: edit ONLY this block. Everything else builds from it.
+   ======================================================================== */
+const BOTIC = {
+  // WhatsApp number in international format, digits only. 55 = Brasil, 11 = SP.
+  whatsapp: "5511000000000",           // <-- PENDENTE: só dígitos. 55 + 11 + número.
+  cro:      "CRO-SP [número]",         // <-- PENDENTE: CRO da Amanda (pessoa física)
+  cnpj:     "CNPJ [a preencher]",      // <-- PENDENTE: CNPJ da Botic
+  croPj:    "Inscrição no CRO-SP [a preencher]", // <-- PENDENTE: inscrição da clínica (PJ)
+  endereco: "[endereço a preencher]",  // <-- PENDENTE
+  horario:  "[horários a preencher]",  // <-- PENDENTE
+  mapsEmbed: "",                       // <-- PENDENTE: src do iframe do Google Maps
+  bookingEmbed: ""                     // <-- PENDENTE: src do iframe Cal.com / Google Agenda
+};
+
+/* Prefilled WhatsApp messages per CTA.
+   Source code convention (phase10 §6): PLATFORM-POSTID-KEYWORD.
+   Here PLATFORM = SITE, POSTID = section of the page. So Monday's scoreboard
+   can tell WHICH part of the page produced the DM, not just "the site". */
+const WA_MSG = {
+  "HERO-SORRISO":     "Oi Amanda! Vim pelo site. SORRISO. Quero entender o meu caso. [SITE-HERO-SORRISO]",
+  "AMANDA-SORRISO":   "Oi Amanda! Vim pelo site. SORRISO. Queria te contar o meu caso. [SITE-AMANDA-SORRISO]",
+  "SERVICOS-SORRISO": "Oi Amanda! Vim pelo site. SORRISO. Queria falar sobre tratamento. [SITE-SERVICOS-SORRISO]",
+  "SERVICOS-NOIVA":   "Oi Amanda! Vim pelo site. NOIVA. Meu casamento é em ____. [SITE-SERVICOS-NOIVA]",
+  "COMO-SORRISO":     "Oi Amanda! Vim pelo site. SORRISO. Quero começar pela limpeza e check-up. [SITE-COMO-SORRISO]",
+  "PRECO-SORRISO":    "Oi Amanda! Vim pelo site. SORRISO. Queria perguntar sobre valores. [SITE-PRECO-SORRISO]",
+  "FAQ-SORRISO":      "Oi Amanda! Vim pelo site. SORRISO. Tenho uma dúvida que não estava lá. [SITE-FAQ-SORRISO]",
+  "AGENDA-SORRISO":   "Oi Amanda! Vim pelo site. SORRISO. Quero uma das primeiras conversas da inauguração. [SITE-AGENDA-SORRISO]",
+  "FOOTER-SORRISO":   "Oi Amanda! Vim pelo site. SORRISO. [SITE-FOOTER-SORRISO]",
+  "FLOAT-SORRISO":    "Oi Amanda! Vim pelo site. SORRISO. [SITE-FLOAT-SORRISO]"
+};
+
+/* ---- build every WhatsApp link ---- */
+document.querySelectorAll("[data-wa]").forEach(function(el){
+  var key = el.getAttribute("data-wa");
+  var msg = WA_MSG[key] || "Oi Amanda! Vim pelo site. SORRISO.";
+  el.href = "https://wa.me/" + BOTIC.whatsapp + "?text=" + encodeURIComponent(msg);
+  el.target = "_blank";
+  el.rel = "noopener";
+});
+
+/* ---- fill pending fields ---- */
+document.querySelectorAll("[data-fill]").forEach(function(el){
+  var k = el.getAttribute("data-fill");
+  var v = BOTIC[k];
+  if (v && v.indexOf("[") === -1) { el.textContent = v; el.classList.remove("pend"); }
+});
+
+/* ---- booking embed ---- */
+if (BOTIC.bookingEmbed) {
+  document.getElementById("booking-slot").innerHTML =
+    '<iframe src="' + BOTIC.bookingEmbed + '" loading="lazy" title="Agendar avaliação"></iframe>';
+}
+
+/* ---- accordion ---- */
+document.querySelectorAll(".acc > button").forEach(function(b){
+  b.addEventListener("click", function(){ b.parentElement.classList.toggle("open"); });
+});
+
+/* ---- scroll reveal ---- */
+var io2 = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if (e.isIntersecting) e.target.classList.add("on"); });
+}, { threshold: 0.12 });
+document.querySelectorAll(".rv").forEach(function(el){ io2.observe(el); });
+
+/* ---- progress bar ---- */
+window.addEventListener("scroll", function(){
+  var h = document.documentElement;
+  var pct = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+  document.getElementById("prog").style.width = pct + "%";
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Botic Odontologia",
+  "description": "Odontologia estetica em Sao Paulo com a Dra. Amanda Marques. Lentes, resinas, clareamento, limpeza e check-up.",
+  "url": "https://boticaestetica.com/homepage/",
+  "founder": { "@type": "Person", "name": "Amanda Marques", "jobTitle": "Cirurgia-dentista" },
+  "medicalSpecialty": "Dentistry",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "[endereco a preencher]",
+    "addressLocality": "Sao Paulo",
+    "addressRegion": "SP",
+    "addressCountry": "BR"
+  },
+  "areaServed": { "@type": "City", "name": "Sao Paulo" },
+  "availableLanguage": "pt-BR",
+  "sameAs": [
+    "https://instagram.com/boticodontologia",
+    "https://instagram.com/odontoamandamarques"
+  ]
+}
+</script>
+
+</body>
+</html>
