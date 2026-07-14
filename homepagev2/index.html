@@ -3,130 +3,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Botic Odontologia | Dra. Amanda Marques | Odontologia estética em São Paulo</title>
-<meta name="description" content="Odontologia estética com a Dra. Amanda Marques em São Paulo. Lentes, clareamento, limpeza e check-up. Sem medo, sem julgamento, sem pressa. Inauguração 20 de agosto.">
-<!-- NOINDEX until CRO number + real address are filled in. Flip to "index,follow" only after that. -->
+<title>Botic Odontologia | Dra. Amanda Marques | v2 — paleta nova</title>
+<meta name="description" content="Odontologia estética com a Dra. Amanda Marques em São Paulo. Versão 2 da paleta: Caramelo Picante, Metrópole, Verde Terapêutico.">
 <meta name="robots" content="noindex,nofollow">
-<link rel="canonical" href="https://boticaestetica.com/homepage/">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="Botic Odontologia | Dra. Amanda Marques">
-<meta property="og:description" content="O sorriso é a coluna que falta na sua rotina de beleza. Odontologia estética em São Paulo.">
-<meta property="og:url" content="https://boticaestetica.com/homepage/">
-<meta property="og:locale" content="pt_BR">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,500;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --nude:#EFE3DB; --olive:#656237; --olive-deep:#4C4A28; --cream:#E9DFD4; --cream-hi:#FBF6EF;
-  --esp:#141210; --ink:#141210; --rose:#C9A38C; --brown:#7B5743;
+  /* ---- PALETA V2 (do leque de tintas) ----
+     terra   = Cerâmica Mineira / Caramelo Picante  62YR 18/397
+     metro   = Metrópole 224
+     verde   = Verde Terapêutico
+     forest + ink foram DERIVADOS: o leque não traz um tom escuro,
+     e um sistema precisa de um escuro pra carregar texto.          */
+  --terra:#C8572A; --terra-deep:#A8451F;
+  --metro:#EFEFEA; --metro-hi:#F7F7F3;
+  --verde:#7E9E4E; --verde-deep:#4F6B32;
+  --forest:#26301C;              /* fundo escuro derivado do verde */
+  --ink:#1B1F17;                 /* quase-preto, com viés verde */
+  --paper:#EFEFEA;               /* tinta clara sobre fundo escuro */
+
   --sans:'Inter',-apple-system,system-ui,sans-serif; --serif:'Playfair Display',Georgia,serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--esp);background:var(--esp);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);color:var(--ink);background:var(--forest);line-height:1.6;-webkit-font-smoothing:antialiased}
 
 section{padding:9vh 8% 10vh;position:relative}
-.g-esp{background:var(--esp);color:var(--cream)}
-.g-nude{background:var(--nude);color:var(--esp)}
-.g-cream{background:linear-gradient(180deg,var(--cream) 0%,var(--cream-hi) 100%);color:var(--esp)}
-.g-olive{background:linear-gradient(180deg,var(--olive-deep) 0%,var(--olive) 100%);color:var(--cream)}
+.g-forest{background:var(--forest);color:var(--paper)}
+.g-metro{background:linear-gradient(180deg,var(--metro) 0%,var(--metro-hi) 100%);color:var(--ink)}
+/* VERDE: tinta ESCURA. Com tinta clara o contraste cai pra 2.3:1 e reprova.
+   Verde Terapêutico é claro demais pra carregar texto claro. */
+.g-verde{background:var(--verde);color:var(--ink)}
+/* TERRA: só títulos grandes. Contraste 4.32:1 com a tinta escura =
+   não passa em corpo de texto (WCAG pede 4.5:1). Regra de sistema. */
+.g-terra{background:linear-gradient(180deg,var(--terra) 0%,var(--terra-deep) 100%);color:var(--ink)}
 
-.mono{font-family:var(--serif);font-style:italic;font-weight:600;letter-spacing:.02em;text-align:center;font-size:1.7rem;opacity:.92}
+.mono{font-family:var(--serif);font-style:italic;font-weight:600;letter-spacing:.02em;text-align:center;font-size:1.7rem;opacity:.95}
 .mono small{display:block;font-family:var(--sans);font-style:normal;font-weight:400;font-size:.56rem;letter-spacing:.42em;text-transform:uppercase;margin-top:.2rem;opacity:.75}
-.eyebrow{font-size:.66rem;letter-spacing:.38em;text-transform:uppercase;font-weight:600;opacity:.62;margin-bottom:1.1rem}
+.eyebrow{font-size:.66rem;letter-spacing:.38em;text-transform:uppercase;font-weight:700;opacity:.7;margin-bottom:1.1rem}
 h1{font-weight:300;font-size:clamp(2.1rem,6.2vw,4.4rem);line-height:1.12;letter-spacing:-.01em}
 h2{font-weight:300;font-size:clamp(1.7rem,4.6vw,3.1rem);line-height:1.15;margin-bottom:1.4rem}
 h1 b,h2 b{font-weight:700}
 h1 i,h2 i,.si{font-family:var(--serif);font-style:italic;font-weight:500}
-.lead{font-size:clamp(1rem,2.1vw,1.22rem);font-weight:300;max-width:44em;opacity:.9}
-.hr{width:44px;height:2px;background:var(--rose);border:none;margin:1.6rem 0}
+.lead{font-size:clamp(1rem,2.1vw,1.22rem);font-weight:300;max-width:44em;opacity:.92}
+/* no fundo terra, "lead" vira tamanho grande obrigatoriamente */
+.g-terra .lead{font-size:clamp(1.15rem,2.4vw,1.42rem);font-weight:400;opacity:1}
+.hr{width:44px;height:2px;background:var(--terra);border:none;margin:1.6rem 0}
+.g-terra .hr,.g-forest .hr{background:var(--metro)}
+.g-verde .hr{background:var(--ink)}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
 .rv.on{opacity:1;transform:none}
 
-/* ---- buttons ---- */
 .ctarow{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.4rem;align-items:center}
 .btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 1.8rem;border-radius:999px;font-family:var(--sans);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;cursor:pointer;text-decoration:none;transition:all .25s;border:1px solid transparent}
-.btn-p{background:var(--rose);color:var(--esp);border-color:var(--rose)}
-.btn-p:hover{background:#d8b39d;border-color:#d8b39d;transform:translateY(-2px)}
+.btn-p{background:var(--terra);color:var(--metro);border-color:var(--terra)}
+.btn-p:hover{background:var(--terra-deep);border-color:var(--terra-deep);transform:translateY(-2px)}
+.g-terra .btn-p{background:var(--ink);color:var(--metro);border-color:var(--ink)}
+.g-terra .btn-p:hover{background:var(--forest);border-color:var(--forest)}
 .btn-s{background:transparent;color:inherit;border-color:currentColor}
-.btn-s:hover{background:var(--rose);border-color:var(--rose);color:var(--esp)}
+.btn-s:hover{background:var(--verde);border-color:var(--verde);color:var(--paper)}
 .btn svg{width:17px;height:17px;flex-shrink:0}
-.microcopy{font-size:.78rem;opacity:.7;margin-top:1rem;font-weight:300}
+.microcopy{font-size:.78rem;opacity:.75;margin-top:1rem;font-weight:300}
+.g-terra .microcopy{font-size:.92rem;font-weight:400;opacity:.9}
 
-/* ---- cards ---- */
 .grid{display:grid;gap:1.1rem;margin-top:2rem}
 .cards2{grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))}
-.cards3{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
-.card{border:1px solid rgba(125,110,95,.28);border-radius:14px;padding:1.6rem 1.5rem;background:rgba(255,255,255,.22)}
-.g-esp .card,.g-olive .card{background:rgba(255,255,255,.05);border-color:rgba(233,223,212,.22)}
+.card{border:1px solid rgba(38,48,28,.2);border-radius:14px;padding:1.6rem 1.5rem;background:rgba(255,255,255,.4)}
+.g-forest .card{background:rgba(255,255,255,.07);border-color:rgba(239,239,234,.22)}
+.g-verde .card{background:rgba(255,255,255,.3);border-color:rgba(27,31,23,.2)}
 .card h3{font-weight:700;font-size:1.04rem;margin-bottom:.55rem}
-.card p{font-size:.9rem;font-weight:300;opacity:.9}
-.card .note{font-size:.82rem;margin-top:.7rem;padding-top:.7rem;border-top:1px solid rgba(125,110,95,.22);opacity:.85}
-.g-esp .card .note,.g-olive .card .note{border-color:rgba(233,223,212,.2)}
-.knum{font-family:var(--serif);font-style:italic;font-weight:600;font-size:2.1rem;line-height:1;display:block;margin-bottom:.45rem;color:var(--brown)}
-.g-esp .knum,.g-olive .knum{color:var(--rose)}
+.card p{font-size:.9rem;font-weight:300;opacity:.92}
+.card .note{font-size:.82rem;margin-top:.7rem;padding-top:.7rem;border-top:1px solid rgba(38,48,28,.18);opacity:.85}
+.g-forest .card .note{border-color:rgba(239,239,234,.2)}
+.g-verde .card .note{border-color:rgba(27,31,23,.18)}
+.knum{font-family:var(--serif);font-style:italic;font-weight:600;font-size:2.1rem;line-height:1;display:block;margin-bottom:.45rem;color:var(--terra)}
+.g-forest .knum{color:var(--metro)}
+.g-verde .knum{color:var(--forest)}
 
-/* ---- lists ---- */
 .blist{margin:1.8rem 0;display:grid;gap:.8rem;max-width:44em}
 .blist div{display:flex;gap:.85rem;font-size:.97rem;font-weight:300}
-.blist div::before{content:"—";color:var(--rose);font-weight:700;flex-shrink:0}
+.blist div::before{content:"—";color:var(--terra);font-weight:700;flex-shrink:0}
+.g-forest .blist div::before{color:var(--metro)}
+.g-verde .blist div::before{color:var(--forest)}
 .story p{font-size:clamp(.98rem,1.9vw,1.1rem);font-weight:300;max-width:44em;margin-bottom:1.05rem;opacity:.92}
 
-/* ---- accordion (perguntas) ---- */
-.acc{border:1px solid rgba(125,110,95,.3);border-radius:14px;margin-bottom:.8rem;overflow:hidden;background:rgba(255,255,255,.25);max-width:52em}
+.acc{border:1px solid rgba(38,48,28,.24);border-radius:14px;margin-bottom:.8rem;overflow:hidden;background:rgba(255,255,255,.45);max-width:52em}
 .acc>button{all:unset;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;gap:1rem;width:100%;padding:1.15rem 1.3rem;cursor:pointer}
 .acc>button h3{font-size:1rem;font-weight:700}
-.acc .chev{transition:transform .35s;color:var(--brown);flex-shrink:0;font-size:.8rem}
+.acc .chev{transition:transform .35s;color:var(--terra);flex-shrink:0;font-size:.8rem}
 .acc.open .chev{transform:rotate(180deg)}
 .acc .bd{max-height:0;overflow:hidden;transition:max-height .45s ease;padding:0 1.3rem}
 .acc.open .bd{max-height:900px;padding:0 1.3rem 1.3rem}
 .acc .bd p{font-size:.92rem;font-weight:300;opacity:.92;margin-bottom:.7rem}
 .acc .bd p:last-child{margin-bottom:0}
-.acc .bd a{color:var(--brown);font-weight:600}
+.acc .bd a{color:var(--verde-deep);font-weight:600}
 
-/* ---- steps ---- */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1.4rem;margin-top:2.2rem}
-.step{position:relative;padding-top:1.2rem;border-top:2px solid var(--rose)}
-.step .n{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--brown);display:block;margin-bottom:.3rem}
-.g-esp .step .n,.g-olive .step .n{color:var(--rose)}
+.step{padding-top:1.2rem;border-top:2px solid var(--terra)}
+.g-forest .step{border-color:var(--metro)}
+.step .n{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--terra);display:block;margin-bottom:.3rem}
+.g-forest .step .n{color:var(--metro)}
 .step h3{font-size:1rem;font-weight:700;margin-bottom:.4rem}
-.step p{font-size:.89rem;font-weight:300;opacity:.9}
+.step p{font-size:.89rem;font-weight:300;opacity:.92}
 
-/* ---- info / where ---- */
 .inforow{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1.6rem;margin-top:2rem}
-.info h3{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;opacity:.6;margin-bottom:.6rem}
+.info h3{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;opacity:.65;margin-bottom:.6rem}
 .info p{font-size:1rem;font-weight:300}
-.mapwrap{margin-top:2rem;border-radius:14px;overflow:hidden;border:1px solid rgba(125,110,95,.3);min-height:280px;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center}
-.mapwrap iframe{width:100%;height:340px;border:0;display:block}
+.pend{background:rgba(200,87,42,.22);border-bottom:1px dashed var(--terra);padding:0 .25rem;border-radius:3px}
 
-/* ---- pending placeholder styling (dev only) ---- */
-.pend{background:rgba(201,163,140,.3);border-bottom:1px dashed var(--brown);padding:0 .25rem;border-radius:3px}
-
-/* ---- sticky whatsapp ---- */
-.float{position:fixed;bottom:20px;right:20px;z-index:80;display:inline-flex;align-items:center;gap:.55rem;padding:.9rem 1.35rem;border-radius:999px;background:var(--esp);color:var(--cream);text-decoration:none;font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 10px 30px rgba(20,18,16,.35);transition:transform .25s,background .25s}
-.float:hover{transform:translateY(-3px);background:var(--brown)}
+.float{position:fixed;bottom:20px;right:20px;z-index:80;display:inline-flex;align-items:center;gap:.55rem;padding:.9rem 1.35rem;border-radius:999px;background:var(--terra);color:var(--metro);text-decoration:none;font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 10px 30px rgba(27,31,23,.4);transition:transform .25s,background .25s}
+.float:hover{transform:translateY(-3px);background:var(--verde-deep)}
 .float svg{width:19px;height:19px}
 
-/* ---- header ---- */
-.topbar{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(120,110,100,.2)}
-.topbar i{display:block;height:100%;width:0;background:var(--rose);transition:width .2s}
+.topbar{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(38,48,28,.25)}
+.topbar i{display:block;height:100%;width:0;background:var(--terra);transition:width .2s}
 
-/* ---- footer ---- */
-footer{background:var(--esp);color:var(--cream);padding:6vh 8% 4vh;font-size:.85rem;font-weight:300}
+.vbadge{position:fixed;top:12px;left:12px;z-index:70;background:var(--ink);color:var(--metro);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;padding:.45rem .8rem;border-radius:999px;opacity:.9}
+
+footer{background:var(--forest);color:var(--paper);padding:6vh 8% 4vh;font-size:.85rem;font-weight:300}
 footer .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:2rem;margin-bottom:2.5rem}
-footer h4{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;font-weight:700;opacity:.55;margin-bottom:.8rem}
-footer a{color:var(--cream);text-decoration:none;opacity:.85}
-footer a:hover{color:var(--rose)}
-footer p{opacity:.85;margin-bottom:.35rem}
-.legal{border-top:1px solid rgba(233,223,212,.18);padding-top:1.6rem;font-size:.74rem;opacity:.6;line-height:1.7}
+footer h4{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;font-weight:700;opacity:.6;margin-bottom:.8rem}
+footer a{color:var(--paper);text-decoration:none;opacity:.88}
+footer a:hover{color:var(--terra)}
+footer p{opacity:.88;margin-bottom:.35rem}
+.legal{border-top:1px solid rgba(239,239,234,.18);padding-top:1.6rem;font-size:.74rem;opacity:.65;line-height:1.7}
 
 @media(max-width:640px){
   section{padding:7vh 7% 8vh}
   .float{bottom:14px;right:14px;padding:.8rem 1.1rem;font-size:.7rem}
-  .ctarow{gap:.7rem}
   .btn{padding:.9rem 1.4rem;font-size:.74rem}
 }
 </style>
@@ -134,9 +141,10 @@ footer p{opacity:.85;margin-bottom:.35rem}
 <body>
 
 <div class="topbar"><i id="prog"></i></div>
+<div class="vbadge">v2 · paleta nova</div>
 
-<!-- ============ HERO ============ -->
-<section class="g-esp" id="inicio" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center">
+<!-- ============ HERO — fundo TERRA. Só tipografia grande. ============ -->
+<section class="g-terra" id="inicio" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center">
   <div class="mono rv">AM<small>Botic Odontologia</small></div>
   <div style="margin-top:auto;padding-top:8vh">
     <p class="eyebrow rv">São Paulo · Inauguração 20 de agosto</p>
@@ -148,14 +156,14 @@ footer p{opacity:.85;margin-bottom:.35rem}
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.5-.4M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 18.2c-1.6 0-3.2-.4-4.6-1.3l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2"/></svg>
         Falar com a Amanda
       </a>
-      <a class="btn btn-s" href="/agendar/?s=HERO">Agendar avaliação</a>
+      <a class="btn btn-s" href="/agendar/?s=HEROV2">Agendar avaliação</a>
     </div>
     <p class="microcopy rv">Quem responde é a Amanda. Não é robô.</p>
   </div>
 </section>
 
-<!-- ============ AMANDA ============ -->
-<section class="g-nude" id="amanda">
+<!-- ============ AMANDA — metro ============ -->
+<section class="g-metro" id="amanda">
   <p class="eyebrow rv">Quem vai cuidar de você</p>
   <h2 class="rv">Prazer, eu sou a <i>Amanda</i>.</h2>
   <p class="microcopy rv" style="margin-top:-.6rem;margin-bottom:1.4rem">Cirurgiã-dentista. <span class="pend" data-fill="cro">CRO-SP [número]</span>.</p>
@@ -174,8 +182,8 @@ footer p{opacity:.85;margin-bottom:.35rem}
   </div>
 </section>
 
-<!-- ============ SERVIÇOS ============ -->
-<section class="g-cream" id="tratamentos">
+<!-- ============ TRATAMENTOS — forest ============ -->
+<section class="g-forest" id="tratamentos">
   <p class="eyebrow rv">O que a gente faz</p>
   <h2 class="rv">Começa pequeno.<br>Cresce só se <i>fizer sentido</i>.</h2>
   <p class="lead rv">Ninguém precisa entrar aqui já decidindo um plano grande. Quase toda história boa começa por uma limpeza bem-feita e uma conversa honesta.</p>
@@ -190,7 +198,7 @@ footer p{opacity:.85;margin-bottom:.35rem}
     <div class="card">
       <span class="knum">02</span>
       <h3>Lentes e resinas</h3>
-      <p>Quando o caso permite, eu trabalho com técnicas de mínimo desgaste. Quando não permite, eu te explico exatamente por quê, antes de qualquer coisa começar. A pergunta que todo mundo faz ("precisa lixar meu dente?") tem resposta, e ela depende do seu caso, não de um catálogo.</p>
+      <p>Quando o caso permite, eu trabalho com técnicas de mínimo desgaste. Quando não permite, eu te explico exatamente por quê, antes de qualquer coisa começar.</p>
       <p class="note">Te explico o porquê, com o seu dente na frente, na avaliação.</p>
     </div>
     <div class="card">
@@ -212,8 +220,8 @@ footer p{opacity:.85;margin-bottom:.35rem}
   </div>
 </section>
 
-<!-- ============ COMO FUNCIONA ============ -->
-<section class="g-nude" id="como-funciona">
+<!-- ============ COMO FUNCIONA — metro ============ -->
+<section class="g-metro" id="como-funciona">
   <p class="eyebrow rv">Como funciona</p>
   <h2 class="rv">Três passos.<br>Nenhuma <i>surpresa</i>.</h2>
   <div class="steps rv">
@@ -238,8 +246,8 @@ footer p{opacity:.85;margin-bottom:.35rem}
   </div>
 </section>
 
-<!-- ============ PREÇO (o diferencial) ============ -->
-<section class="g-olive" id="valores">
+<!-- ============ VALORES — verde ============ -->
+<section class="g-verde" id="valores">
   <p class="eyebrow rv">Valores</p>
   <h2 class="rv">Por que não tem <i>preço</i> nesta página.</h2>
   <div class="story rv">
@@ -261,8 +269,8 @@ footer p{opacity:.85;margin-bottom:.35rem}
   <p class="microcopy rv">Pode perguntar sem rodeios. Perguntar não te obriga a nada.</p>
 </section>
 
-<!-- ============ PERGUNTAS REAIS ============ -->
-<section class="g-cream" id="perguntas">
+<!-- ============ PERGUNTAS — metro ============ -->
+<section class="g-metro" id="perguntas">
   <p class="eyebrow rv">Perguntas reais</p>
   <h2 class="rv">As coisas que você <i>quer</i> perguntar<br>e não pergunta.</h2>
   <p class="lead rv" style="margin-bottom:2.4rem">Estas são, palavra por palavra, as dúvidas que mais aparecem. Nenhuma delas é boba.</p>
@@ -332,8 +340,8 @@ footer p{opacity:.85;margin-bottom:.35rem}
   </div>
 </section>
 
-<!-- ============ ONDE / AGENDA ============ -->
-<section class="g-nude" id="agenda">
+<!-- ============ AGENDA — forest ============ -->
+<section class="g-forest" id="agenda">
   <p class="eyebrow rv">Onde a gente fica</p>
   <h2 class="rv">A Botic abre em <i>20 de agosto</i>.</h2>
   <p class="lead rv">A agenda das primeiras semanas está sendo montada agora. Se você quer uma das primeiras conversas, me chama que eu seguro o seu lugar.</p>
@@ -353,22 +361,12 @@ footer p{opacity:.85;margin-bottom:.35rem}
     </div>
   </div>
 
-  <!-- BOOKING: Clinicorp Agendamento Online, sempre atrás do link próprio /agendar/ -->
-  <div class="mapwrap rv" id="booking-slot">
-    <p style="opacity:.6;font-size:.85rem;padding:2rem;text-align:center">
-      [Agenda online: cole o link do Clinicorp em /agendar/index.html]<br>
-      <span style="font-size:.75rem">Enquanto isso, o WhatsApp agenda mais rápido que qualquer formulário.</span>
-    </p>
-  </div>
-
   <div class="ctarow rv">
     <a class="btn btn-p" data-wa="AGENDA-SORRISO" href="#">Quero uma das primeiras conversas</a>
-    <a class="btn btn-s" href="/agendar/?s=AGENDA">Escolher um horário</a>
+    <a class="btn btn-s" href="/agendar/?s=AGENDAV2">Escolher um horário</a>
   </div>
-  <p class="microcopy rv">Prefere resolver na conversa? Me chama. Prefere só escolher um horário? Também pode.</p>
 </section>
 
-<!-- ============ FOOTER ============ -->
 <footer>
   <div class="fgrid">
     <div>
@@ -395,10 +393,9 @@ footer p{opacity:.85;margin-bottom:.35rem}
   </div>
   <div class="legal">
     <p>Dra. Amanda Marques. Cirurgiã-dentista. <span class="pend" data-fill="cro">CRO-SP [número]</span>. Responsável Técnica pela Botic Odontologia.</p>
-    <p>Botic Odontologia. <span class="pend" data-fill="cnpj">CNPJ [a preencher]</span>. <span class="pend" data-fill="croPj">Inscrição no CRO-SP [a preencher]</span>.</p>
     <p>As informações desta página têm caráter informativo e não substituem uma consulta odontológica presencial. Nenhum conteúdo aqui constitui diagnóstico, indicação de tratamento ou promessa de resultado. Resultados de tratamentos odontológicos variam de pessoa para pessoa e só podem ser avaliados individualmente, após exame clínico.</p>
     <p><a href="/politica-de-privacidade/">Política de Privacidade</a></p>
-    <p style="margin-top:.8rem">© 2026 Botic Odontologia.</p>
+    <p style="margin-top:.8rem">© 2026 Botic Odontologia. — <b>VERSÃO 2, paleta em avaliação.</b></p>
   </div>
 </footer>
 
@@ -408,42 +405,26 @@ footer p{opacity:.85;margin-bottom:.35rem}
 </a>
 
 <script>
-/* ========================================================================
-   CONFIG. Luke: edit ONLY this block. Everything else builds from it.
-   ======================================================================== */
 const BOTIC = {
-  // WhatsApp number in international format, digits only. 55 = Brasil, 11 = SP.
-  whatsapp: "5511957876692",           // Botic / Amanda
-  cro:      "CRO-SP [número]",         // <-- PENDENTE: CRO da Amanda (pessoa física)
-  cnpj:     "CNPJ [a preencher]",      // <-- PENDENTE: CNPJ da Botic
-  croPj:    "Inscrição no CRO-SP [a preencher]", // <-- PENDENTE: inscrição da clínica (PJ)
-  endereco: "[endereço a preencher]",  // <-- PENDENTE
-  horario:  "[horários a preencher]",  // <-- PENDENTE
-  mapsEmbed: "",                       // <-- PENDENTE: src do iframe do Google Maps
-  // Link do Clinicorp (Agendamento Online). Só preencha aqui se o Clinicorp
-  // permitir iframe. Se não permitir, deixe vazio: os botões continuam indo
-  // para /agendar/, que é o link que a Botic controla. Ver /agendar/index.html.
-  bookingEmbed: ""
+  whatsapp: "5511957876692",
+  cro:      "CRO-SP [número]",
+  endereco: "[endereço a preencher]",
+  horario:  "[horários a preencher]"
 };
 
-/* Prefilled WhatsApp messages per CTA.
-   Source code convention (phase10 §6): PLATFORM-POSTID-KEYWORD.
-   Here PLATFORM = SITE, POSTID = section of the page. So Monday's scoreboard
-   can tell WHICH part of the page produced the DM, not just "the site". */
 const WA_MSG = {
-  "HERO-SORRISO":     "Oi Amanda! Vim pelo site. SORRISO. Quero entender o meu caso. [SITE-HERO-SORRISO]",
-  "AMANDA-SORRISO":   "Oi Amanda! Vim pelo site. SORRISO. Queria te contar o meu caso. [SITE-AMANDA-SORRISO]",
-  "SERVICOS-SORRISO": "Oi Amanda! Vim pelo site. SORRISO. Queria falar sobre tratamento. [SITE-SERVICOS-SORRISO]",
-  "SERVICOS-NOIVA":   "Oi Amanda! Vim pelo site. NOIVA. Meu casamento é em ____. [SITE-SERVICOS-NOIVA]",
-  "COMO-SORRISO":     "Oi Amanda! Vim pelo site. SORRISO. Quero começar pela limpeza e check-up. [SITE-COMO-SORRISO]",
-  "PRECO-SORRISO":    "Oi Amanda! Vim pelo site. SORRISO. Queria perguntar sobre valores. [SITE-PRECO-SORRISO]",
-  "FAQ-SORRISO":      "Oi Amanda! Vim pelo site. SORRISO. Tenho uma dúvida que não estava lá. [SITE-FAQ-SORRISO]",
-  "AGENDA-SORRISO":   "Oi Amanda! Vim pelo site. SORRISO. Quero uma das primeiras conversas da inauguração. [SITE-AGENDA-SORRISO]",
-  "FOOTER-SORRISO":   "Oi Amanda! Vim pelo site. SORRISO. [SITE-FOOTER-SORRISO]",
-  "FLOAT-SORRISO":    "Oi Amanda! Vim pelo site. SORRISO. [SITE-FLOAT-SORRISO]"
+  "HERO-SORRISO":     "Oi Amanda! Vim pelo site. SORRISO. Quero entender o meu caso. [SITE-V2-HERO-SORRISO]",
+  "AMANDA-SORRISO":   "Oi Amanda! Vim pelo site. SORRISO. Queria te contar o meu caso. [SITE-V2-AMANDA-SORRISO]",
+  "SERVICOS-SORRISO": "Oi Amanda! Vim pelo site. SORRISO. Queria falar sobre tratamento. [SITE-V2-SERVICOS-SORRISO]",
+  "SERVICOS-NOIVA":   "Oi Amanda! Vim pelo site. NOIVA. Meu casamento é em ____. [SITE-V2-SERVICOS-NOIVA]",
+  "COMO-SORRISO":     "Oi Amanda! Vim pelo site. SORRISO. Quero começar pela limpeza e check-up. [SITE-V2-COMO-SORRISO]",
+  "PRECO-SORRISO":    "Oi Amanda! Vim pelo site. SORRISO. Queria perguntar sobre valores. [SITE-V2-PRECO-SORRISO]",
+  "FAQ-SORRISO":      "Oi Amanda! Vim pelo site. SORRISO. Tenho uma dúvida que não estava lá. [SITE-V2-FAQ-SORRISO]",
+  "AGENDA-SORRISO":   "Oi Amanda! Vim pelo site. SORRISO. Quero uma das primeiras conversas. [SITE-V2-AGENDA-SORRISO]",
+  "FOOTER-SORRISO":   "Oi Amanda! Vim pelo site. SORRISO. [SITE-V2-FOOTER-SORRISO]",
+  "FLOAT-SORRISO":    "Oi Amanda! Vim pelo site. SORRISO. [SITE-V2-FLOAT-SORRISO]"
 };
 
-/* ---- build every WhatsApp link ---- */
 document.querySelectorAll("[data-wa]").forEach(function(el){
   var key = el.getAttribute("data-wa");
   var msg = WA_MSG[key] || "Oi Amanda! Vim pelo site. SORRISO.";
@@ -452,35 +433,24 @@ document.querySelectorAll("[data-wa]").forEach(function(el){
   el.rel = "noopener";
 });
 
-/* ---- fill pending fields ---- */
 document.querySelectorAll("[data-fill]").forEach(function(el){
-  var k = el.getAttribute("data-fill");
-  var v = BOTIC[k];
+  var v = BOTIC[el.getAttribute("data-fill")];
   if (v && v.indexOf("[") === -1) { el.textContent = v; el.classList.remove("pend"); }
 });
 
-/* ---- booking embed ---- */
-if (BOTIC.bookingEmbed) {
-  document.getElementById("booking-slot").innerHTML =
-    '<iframe src="' + BOTIC.bookingEmbed + '" loading="lazy" title="Agendar avaliação"></iframe>';
-}
-
-/* ---- accordion ---- */
 document.querySelectorAll(".acc > button").forEach(function(b){
   b.addEventListener("click", function(){ b.parentElement.classList.toggle("open"); });
 });
 
-/* ---- scroll reveal ---- */
 var io2 = new IntersectionObserver(function(entries){
   entries.forEach(function(e){ if (e.isIntersecting) e.target.classList.add("on"); });
 }, { threshold: 0.12 });
 document.querySelectorAll(".rv").forEach(function(el){ io2.observe(el); });
 
-/* ---- progress bar ---- */
 window.addEventListener("scroll", function(){
   var h = document.documentElement;
-  var pct = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
-  document.getElementById("prog").style.width = pct + "%";
+  document.getElementById("prog").style.width =
+    (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + "%";
 });
 </script>
 
@@ -534,22 +504,25 @@ window.addEventListener("scroll", function(){
 
 <script>
 (function(){
+  /* ---- os tokens desta página ---- */
   var TOKENS = [
-    {v:"--nude",       l:"Nude Rosé",             d:"#EFE3DB"},
-    {v:"--cream",      l:"Creme",                 d:"#E9DFD4"},
-    {v:"--cream-hi",   l:"Creme claro",           d:"#FBF6EF"},
-    {v:"--olive",      l:"Oliva",                 d:"#656237"},
-    {v:"--olive-deep", l:"Oliva profunda",        d:"#4C4A28"},
-    {v:"--esp",        l:"Espresso (tinta escura)",d:"#141210"},
-    {v:"--rose",       l:"Rosé (acento)",         d:"#C9A38C"},
-    {v:"--brown",      l:"Marrom (acento)",       d:"#7B5743"}
+    {v:"--terra",      l:"Caramelo Picante",       d:"#C8572A"},
+    {v:"--terra-deep", l:"Caramelo profundo",      d:"#A8451F"},
+    {v:"--metro",      l:"Metrópole 224",          d:"#EFEFEA"},
+    {v:"--metro-hi",   l:"Metrópole claro",        d:"#F7F7F3"},
+    {v:"--verde",      l:"Verde Terapêutico",      d:"#7E9E4E"},
+    {v:"--verde-deep", l:"Verde profundo",         d:"#4F6B32"},
+    {v:"--forest",     l:"Verde escuro (derivado)",d:"#26301C"},
+    {v:"--ink",        l:"Tinta escura (derivada)",d:"#1B1F17"},
+    {v:"--paper",      l:"Tinta clara",            d:"#EFEFEA"}
   ];
+  /* ---- onde texto realmente pousa: fundo + tinta usada nele ---- */
   var PAIRS = [
-    {g:"--nude",       i:"--esp",   l:"Nude + espresso"},
-    {g:"--cream",      i:"--esp",   l:"Creme + espresso"},
-    {g:"--esp",        i:"--cream", l:"Espresso + creme"},
-    {g:"--olive",      i:"--cream", l:"Oliva + creme"},
-    {g:"--olive-deep", i:"--cream", l:"Oliva profunda + creme"}
+    {g:"--metro",  i:"--ink",   l:"Metrópole + tinta escura"},
+    {g:"--forest", i:"--paper", l:"Verde escuro + tinta clara"},
+    {g:"--verde",  i:"--ink",   l:"Verde + tinta escura"},
+    {g:"--terra",  i:"--ink",   l:"Caramelo + tinta escura"},
+    {g:"--terra",  i:"--metro", l:"Caramelo + tinta clara"}
   ];
 
   var cur = {};
@@ -570,7 +543,6 @@ window.addEventListener("scroll", function(){
     TOKENS.forEach(function(t){
       document.documentElement.style.setProperty(t.v, cur[t.v]);
     });
-    document.documentElement.style.setProperty("--ink", cur["--esp"]);
     renderPairs();
   }
   function renderPairs(){
@@ -606,6 +578,8 @@ window.addEventListener("scroll", function(){
       box.appendChild(row);
     });
   }
+
+  /* ---- paleta na URL, pra poder mandar pro outro ---- */
   function readHash(){
     var m = location.hash.match(/p=([0-9a-fA-F,]+)/);
     if(!m) return;
@@ -649,31 +623,6 @@ window.addEventListener("scroll", function(){
   apply();
   if (qp === "1") document.getElementById("dp").classList.add("open");
 })();
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Dentist",
-  "name": "Botic Odontologia",
-  "description": "Odontologia estetica em Sao Paulo com a Dra. Amanda Marques. Lentes, resinas, clareamento, limpeza e check-up.",
-  "url": "https://boticaestetica.com/homepage/",
-  "founder": { "@type": "Person", "name": "Amanda Marques", "jobTitle": "Cirurgia-dentista" },
-  "medicalSpecialty": "Dentistry",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "[endereco a preencher]",
-    "addressLocality": "Sao Paulo",
-    "addressRegion": "SP",
-    "addressCountry": "BR"
-  },
-  "areaServed": { "@type": "City", "name": "Sao Paulo" },
-  "availableLanguage": "pt-BR",
-  "sameAs": [
-    "https://instagram.com/boticodontologia",
-    "https://instagram.com/odontoamandamarques"
-  ]
-}
 </script>
 
 </body>
