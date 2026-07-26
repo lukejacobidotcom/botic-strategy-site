@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Botic Odontologia | Dra. Amanda Marques | v2 — paleta nova</title>
+<title>Botica Clinic | Dra. Amanda Marques | Odontologia estética · Paraíso, São Paulo</title>
 <meta name="description" content="Odontologia estética com a Dra. Amanda Marques em São Paulo. Versão 2 da paleta: Caramelo Picante, Metrópole, Verde Terapêutico.">
 <meta name="robots" content="noindex,nofollow">
 
@@ -19,6 +19,7 @@
      forest + ink foram DERIVADOS: o leque não traz um tom escuro,
      e um sistema precisa de um escuro pra carregar texto.          */
   --terra:#C8572A; --terra-deep:#A8451F;
+  --wall:#EDEAE3;   /* fundo linho pálido do papel de parede floral */
   --metro:#EFEFEA; --metro-hi:#F7F7F3;
   --verde:#7E9E4E; --verde-deep:#4F6B32;
   --forest:#26301C;              /* fundo escuro derivado do verde */
@@ -37,9 +38,24 @@ section{padding:9vh 8% 10vh;position:relative}
 /* VERDE: tinta ESCURA. Com tinta clara o contraste cai pra 2.3:1 e reprova.
    Verde Terapêutico é claro demais pra carregar texto claro. */
 .g-verde{background:var(--verde);color:var(--ink)}
-/* TERRA: só títulos grandes. Contraste 4.32:1 com a tinta escura =
-   não passa em corpo de texto (WCAG pede 4.5:1). Regra de sistema. */
-.g-terra{background:linear-gradient(180deg,var(--terra) 0%,var(--terra-deep) 100%);color:var(--ink)}
+/* HERO com papel de parede floral (o mesmo espírito do painel do consultório).
+   Camadas, de cima pra baixo:
+   1) scrim que clareia embaixo, pra o texto/CTA ficar legível
+   2) o floral (trailing vines) no topo
+   3) o fundo linho pálido (nada mais claro que um dente) */
+.g-terra{
+  background:
+    linear-gradient(180deg, rgba(237,234,227,0) 0%, rgba(237,234,227,0) 42%, rgba(237,234,227,.72) 82%, rgba(237,234,227,.9) 100%),
+    url('floral.svg') top center / cover no-repeat,
+    linear-gradient(180deg, var(--wall) 0%, #E8E3DA 100%);
+  color:var(--ink);
+}
+@media(max-width:640px){
+  .g-terra{ background:
+    linear-gradient(180deg, rgba(237,234,227,0) 0%, rgba(237,234,227,.5) 55%, rgba(237,234,227,.92) 100%),
+    url('floral.svg') top center / 1000px auto no-repeat,
+    linear-gradient(180deg, var(--wall) 0%, #E8E3DA 100%); }
+}
 
 .mono{font-family:var(--serif);font-style:italic;font-weight:600;letter-spacing:.02em;text-align:center;font-size:1.7rem;opacity:.95}
 .mono small{display:block;font-family:var(--sans);font-style:normal;font-weight:400;font-size:.56rem;letter-spacing:.42em;text-transform:uppercase;margin-top:.2rem;opacity:.75}
@@ -52,7 +68,8 @@ h1 i,h2 i,.si{font-family:var(--serif);font-style:italic;font-weight:500}
 /* no fundo terra, "lead" vira tamanho grande obrigatoriamente */
 .g-terra .lead{font-size:clamp(1.15rem,2.4vw,1.42rem);font-weight:400;opacity:1}
 .hr{width:44px;height:2px;background:var(--terra);border:none;margin:1.6rem 0}
-.g-terra .hr,.g-forest .hr{background:var(--metro)}
+.g-forest .hr{background:var(--metro)}
+.g-terra .hr{background:var(--terra)}
 .g-verde .hr{background:var(--ink)}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
 .rv.on{opacity:1;transform:none}
@@ -131,6 +148,22 @@ footer a:hover{color:var(--terra)}
 footer p{opacity:.88;margin-bottom:.35rem}
 .legal{border-top:1px solid rgba(239,239,234,.18);padding-top:1.6rem;font-size:.74rem;opacity:.65;line-height:1.7}
 
+/* founder-led hero split */
+.herogrid{display:grid;gap:clamp(1.4rem,4vw,3rem);align-items:center;margin-top:auto;padding-top:5vh}
+@media(min-width:860px){.herogrid{grid-template-columns:1.05fr .92fr}}
+.heroimg img{width:100%;max-width:430px;border-radius:16px;display:block;box-shadow:0 22px 55px rgba(74,52,42,.26);border:1px solid rgba(168,131,78,.45)}
+@media(min-width:860px){.heroimg img{margin-left:auto}}
+@media(max-width:859px){.heroimg img{max-width:300px;margin:1.4rem auto 0}}
+/* brand logo lockup (apothecary sprig + serif wordmark) */
+.brandlogo{display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center}
+.brandlogo .sprig{width:24px;height:32px;display:block}
+.brandlogo .wm{font-family:var(--serif);font-size:1.9rem;line-height:1;letter-spacing:.01em;color:inherit}
+.brandlogo .wm span{display:block;font-family:var(--sans);font-weight:600;font-size:.52rem;letter-spacing:.44em;text-transform:uppercase;opacity:.72;margin-top:.3rem}
+/* "video" stand-in: Amanda's still breathes like footage (reduced-motion safe) */
+@media(prefers-reduced-motion:no-preference){
+  @keyframes kb{0%{transform:scale(1)}100%{transform:scale(1.055)}}
+  .heroimg img{animation:kb 20s ease-in-out infinite alternate;transform-origin:58% 38%}
+}
 @media(max-width:640px){
   section{padding:7vh 7% 8vh}
   .float{bottom:14px;right:14px;padding:.8rem 1.1rem;font-size:.7rem}
@@ -145,9 +178,20 @@ footer p{opacity:.88;margin-bottom:.35rem}
 
 <!-- ============ HERO — fundo TERRA. Só tipografia grande. ============ -->
 <section class="g-terra" id="inicio" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center">
-  <div class="mono rv">AM<small>Botic Odontologia</small></div>
-  <div style="margin-top:auto;padding-top:8vh">
-    <p class="eyebrow rv">São Paulo · Inauguração 20 de agosto</p>
+  <div class="brandlogo rv">
+    <svg class="sprig" viewBox="0 0 26 40" fill="none" aria-hidden="true" style="width:26px;height:38px">
+      <g transform="translate(13,6) scale(0.46)">
+        <path d="M0,66 C 0,54 -1,44 0,36" stroke="#A8834E" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M0,54 C -10,50 -15,42 -17,36 C -9,38 -3,45 0,54 Z" fill="#A8834E" opacity=".82"/>
+        <path d="M0,36 C -8,24 -10,9 0,0 C 6,-5 16,-5 19,3 C 21,8 17,14 11,12 C 15,6 8,3 5,9 C 2,16 1,27 0,36 Z" stroke="#A8834E" stroke-width="3.4" fill="none" stroke-linejoin="round"/>
+        <line x1="7" y1="2" x2="8.6" y2="13" stroke="#C9A24E" stroke-width="5" stroke-linecap="round"/>
+      </g>
+    </svg>
+    <div class="wm">botica<span>Clinic</span></div>
+  </div>
+  <div class="herogrid">
+   <div class="herotext">
+    <p class="eyebrow rv">São Paulo · Paraíso · Inauguração 20 de agosto</p>
     <h1 class="rv">O sorriso é a coluna que falta<br>na sua <i>rotina de beleza</i>.</h1>
     <hr class="hr rv">
     <p class="lead rv">Odontologia estética com a Dra. Amanda Marques. Sem medo, sem julgamento, sem pressa. E sem você descobrir o valor sentada na cadeira.</p>
@@ -158,7 +202,11 @@ footer p{opacity:.88;margin-bottom:.35rem}
       </a>
       <a class="btn btn-s" href="/agendar/?s=HEROV2">Agendar avaliação</a>
     </div>
-    <p class="microcopy rv">Quem responde é a Amanda. Não é robô.</p>
+    <p class="microcopy rv">Quem responde é a Amanda, normalmente em até 5 minutos. Não é robô.</p>
+   </div>
+   <div class="heroimg rv">
+     <img src="amanda-hero.jpeg" alt="Dra. Amanda Marques, cirurgiã-dentista, fundadora da Botica Clinic" loading="eager">
+   </div>
   </div>
 </section>
 
@@ -166,7 +214,7 @@ footer p{opacity:.88;margin-bottom:.35rem}
 <section class="g-metro" id="amanda">
   <p class="eyebrow rv">Quem vai cuidar de você</p>
   <h2 class="rv">Prazer, eu sou a <i>Amanda</i>.</h2>
-  <p class="microcopy rv" style="margin-top:-.6rem;margin-bottom:1.4rem">Cirurgiã-dentista. <span class="pend" data-fill="cro">CRO-SP [número]</span>.</p>
+  <p class="microcopy rv" style="margin-top:-.6rem;margin-bottom:1.4rem">Cirurgiã-dentista. <span class="pend" data-fill="cro">CRO-SP 172448</span>.</p>
   <div class="story rv">
     <p>Sou dentista, formada e apaixonada por uma parte do corpo que a maioria das pessoas só lembra quando dói. Passei anos vendo gente boa adiar consulta por vergonha, por medo, ou porque uma vez alguém falou alto demais sobre a boca dela.</p>
     <p>A Botic nasceu disso. Eu queria um lugar onde a pessoa entra sem prender a respiração.</p>
@@ -349,7 +397,7 @@ footer p{opacity:.88;margin-bottom:.35rem}
   <div class="inforow rv">
     <div class="info">
       <h3>Endereço</h3>
-      <p><span class="pend" data-fill="endereco">[endereço a preencher]</span><br>São Paulo, SP</p>
+      <p><span class="pend" data-fill="endereco">Rua Correia Dias, 91 · sala 113 · Paraíso</span><br>São Paulo, SP</p>
     </div>
     <div class="info">
       <h3>Horários</h3>
@@ -357,7 +405,7 @@ footer p{opacity:.88;margin-bottom:.35rem}
     </div>
     <div class="info">
       <h3>Responsável técnica</h3>
-      <p>Dra. Amanda Marques<br><span class="pend" data-fill="cro">CRO-SP [número]</span></p>
+      <p>Dra. Amanda Marques<br><span class="pend" data-fill="cro">CRO-SP 172448</span></p>
     </div>
   </div>
 
@@ -370,7 +418,9 @@ footer p{opacity:.88;margin-bottom:.35rem}
 <footer>
   <div class="fgrid">
     <div>
-      <div class="mono" style="text-align:left;font-size:1.4rem">AM<small style="letter-spacing:.3em">Botic Odontologia</small></div>
+      <div class="brandlogo" style="align-items:flex-start;text-align:left">
+        <div class="wm" style="font-size:1.5rem">botica<span>Clinic</span></div>
+      </div>
     </div>
     <div>
       <h4>Navegue</h4>
@@ -392,10 +442,10 @@ footer p{opacity:.88;margin-bottom:.35rem}
     </div>
   </div>
   <div class="legal">
-    <p>Dra. Amanda Marques. Cirurgiã-dentista. <span class="pend" data-fill="cro">CRO-SP [número]</span>. Responsável Técnica pela Botic Odontologia.</p>
+    <p>Dra. Amanda Marques. Cirurgiã-dentista. <span class="pend" data-fill="cro">CRO-SP 172448</span>. Responsável Técnica pela Botica Clinic.</p>
     <p>As informações desta página têm caráter informativo e não substituem uma consulta odontológica presencial. Nenhum conteúdo aqui constitui diagnóstico, indicação de tratamento ou promessa de resultado. Resultados de tratamentos odontológicos variam de pessoa para pessoa e só podem ser avaliados individualmente, após exame clínico.</p>
     <p><a href="/politica-de-privacidade/">Política de Privacidade</a></p>
-    <p style="margin-top:.8rem">© 2026 Botic Odontologia. — <b>VERSÃO 2, paleta em avaliação.</b></p>
+    <p style="margin-top:.8rem">© 2026 Botica Clinic.</p>
   </div>
 </footer>
 
@@ -406,9 +456,9 @@ footer p{opacity:.88;margin-bottom:.35rem}
 
 <script>
 const BOTIC = {
-  whatsapp: "5511957876692",
-  cro:      "CRO-SP [número]",
-  endereco: "[endereço a preencher]",
+  whatsapp: "5511970873407",
+  cro:      "CRO-SP 172448",
+  endereco: "Rua Correia Dias, 91 · sala 113 · Paraíso",
   horario:  "[horários a preencher]"
 };
 

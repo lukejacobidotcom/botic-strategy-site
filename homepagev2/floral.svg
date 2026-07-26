@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1180" preserveAspectRatio="xMidYMin slice" fill="none">
+<!--
+  Botic — trailing watercolor botanical.
+  Original in spirit (artsyobjeto panel), NOT a copy. Deviations biased toward
+  the beauty-through-health brand: the room's warm palette (sage-olive, muted
+  terracotta, dusty rose), soft brass/gold flower centers echoing the AM
+  monogram, editorial + airy rather than nursery. Vines hang straight down,
+  dense at the top, thinning as they trail — so the headline zone stays calm.
+-->
+<defs>
+  <filter id="wc" x="-40%" y="-40%" width="180%" height="180%">
+    <feGaussianBlur stdDeviation="1.1"/>
+  </filter>
+  <filter id="wcSoft" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="2.2"/>
+  </filter>
+
+  <!-- loose watercolor blooms: overlapping translucent petals, gold center -->
+  <g id="bloomRose">
+    <g filter="url(#wc)" opacity="0.8">
+      <ellipse cx="-6" cy="-4" rx="7" ry="4.5" fill="#D4A7A0" transform="rotate(-25 -6 -4)"/>
+      <ellipse cx="6" cy="-5" rx="6.5" ry="4" fill="#DcB2Ab" transform="rotate(20 6 -5)"/>
+      <ellipse cx="7" cy="4" rx="6" ry="4" fill="#CE9A93" transform="rotate(60 7 4)"/>
+      <ellipse cx="-5" cy="6" rx="6.5" ry="4" fill="#D8ABA4" transform="rotate(-55 -5 6)"/>
+      <ellipse cx="0" cy="-8" rx="5.5" ry="4" fill="#E0BAB4"/>
+    </g>
+    <circle cx="0" cy="0" r="2.4" fill="#C9A24E" opacity="0.85" filter="url(#wc)"/>
+  </g>
+
+  <g id="bloomLilac">
+    <g filter="url(#wc)" opacity="0.72">
+      <ellipse cx="-5" cy="-4" rx="6" ry="4" fill="#B7A6C6" transform="rotate(-30 -5 -4)"/>
+      <ellipse cx="5" cy="-4" rx="6" ry="4" fill="#C2B3CE" transform="rotate(30 5 -4)"/>
+      <ellipse cx="6" cy="4" rx="5.5" ry="3.6" fill="#AE9DBE" transform="rotate(65 6 4)"/>
+      <ellipse cx="-6" cy="4" rx="5.5" ry="3.6" fill="#BBAAC9" transform="rotate(-65 -6 4)"/>
+    </g>
+    <circle cx="0" cy="0" r="2" fill="#CBA86A" opacity="0.8" filter="url(#wc)"/>
+  </g>
+
+  <g id="bloomPeach">
+    <g filter="url(#wc)" opacity="0.78">
+      <ellipse cx="-5" cy="-3" rx="6.5" ry="4" fill="#DDA98A" transform="rotate(-20 -5 -3)"/>
+      <ellipse cx="5" cy="-4" rx="6" ry="4" fill="#E4B79A" transform="rotate(25 5 -4)"/>
+      <ellipse cx="4" cy="5" rx="5.5" ry="3.6" fill="#D69E7E" transform="rotate(60 4 5)"/>
+      <ellipse cx="-5" cy="5" rx="5.5" ry="3.6" fill="#DFAE8E" transform="rotate(-58 -5 5)"/>
+      <ellipse cx="0" cy="-7" rx="5" ry="3.6" fill="#E6BC9F"/>
+    </g>
+    <circle cx="0" cy="0" r="2.2" fill="#C8815E" opacity="0.8" filter="url(#wc)"/>
+  </g>
+
+  <g id="bloomYellow">
+    <g filter="url(#wc)" opacity="0.7">
+      <ellipse cx="-4" cy="-3" rx="5.5" ry="3.6" fill="#E4D394" transform="rotate(-25 -4 -3)"/>
+      <ellipse cx="4" cy="-3" rx="5.5" ry="3.6" fill="#EADDA6" transform="rotate(25 4 -3)"/>
+      <ellipse cx="0" cy="5" rx="5" ry="3.4" fill="#DECD8C"/>
+    </g>
+    <circle cx="0" cy="0" r="1.8" fill="#C9A24E" opacity="0.85"/>
+  </g>
+
+  <!-- tiny bud + slim leaf -->
+  <g id="bud"><ellipse cx="0" cy="0" rx="2.6" ry="5" fill="#CE9A93" opacity="0.62" filter="url(#wc)"/></g>
+  <g id="budY"><ellipse cx="0" cy="0" rx="2.2" ry="4.4" fill="#DECD8C" opacity="0.6" filter="url(#wc)"/></g>
+  <g id="leaf"><ellipse cx="0" cy="0" rx="9" ry="2.6" fill="#93A17A" opacity="0.66" filter="url(#wc)"/></g>
+  <g id="leafOlive"><ellipse cx="0" cy="0" rx="8" ry="2.4" fill="#7C8B57" opacity="0.6" filter="url(#wc)"/></g>
+
+  <!-- a delicate hanging strand: thin curving vine + fine tendrils, leaves, blooms.
+       Designed hanging from y=0 downward, thinning as it falls. -->
+  <g id="vine">
+    <path d="M0,-10 C 6,90 -10,180 4,280 C 14,360 -6,450 6,560 C 12,640 2,720 8,820"
+          stroke="#93A17A" stroke-width="1.15" fill="none" opacity="0.62"/>
+    <!-- fine tendrils -->
+    <path d="M2,120 C -22,150 -30,190 -24,230" stroke="#9CAF88" stroke-width="0.8" fill="none" opacity="0.5"/>
+    <path d="M0,300 C 26,330 32,372 24,410" stroke="#9CAF88" stroke-width="0.8" fill="none" opacity="0.5"/>
+    <path d="M6,500 C -18,530 -24,566 -18,604" stroke="#9CAF88" stroke-width="0.75" fill="none" opacity="0.45"/>
+    <use href="#leaf" x="10" y="70"  transform="rotate(58 10 70)"/>
+    <use href="#leafOlive" x="-12" y="150" transform="rotate(-62 -12 150)"/>
+    <use href="#leaf" x="14" y="250" transform="rotate(52 14 250)"/>
+    <use href="#leafOlive" x="-10" y="360" transform="rotate(-58 -10 360)"/>
+    <use href="#leaf" x="12" y="470" transform="rotate(55 12 470)"/>
+    <use href="#leafOlive" x="-8" y="580" transform="rotate(-50 -8 580)"/>
+    <use href="#leaf" x="9" y="690" transform="rotate(50 9 690)"/>
+    <use href="#bloomRose"   x="-14" y="110"/>
+    <use href="#bloomYellow" x="16"  y="180"/>
+    <use href="#bud"         x="8"   y="235" transform="rotate(22 8 235)"/>
+    <use href="#bloomLilac"  x="-16" y="300"/>
+    <use href="#bloomPeach"  x="14"  y="380"/>
+    <use href="#budY"        x="-10" y="440" transform="rotate(-18 -10 440)"/>
+    <use href="#bloomRose"   x="12"  y="520"/>
+    <use href="#bloomLilac"  x="-12" y="600"/>
+    <use href="#bloomPeach"  x="8"   y="700"/>
+    <use href="#bud"         x="-6"  y="770" transform="rotate(16 -6 770)"/>
+  </g>
+
+  <!-- a shorter, sparser strand for filling upper band without crowding -->
+  <g id="vineShort">
+    <path d="M0,-10 C 5,80 -8,150 3,230 C 10,290 -3,350 5,430"
+          stroke="#9CAF88" stroke-width="1" fill="none" opacity="0.55"/>
+    <use href="#leaf" x="9" y="60" transform="rotate(55 9 60)"/>
+    <use href="#leafOlive" x="-9" y="140" transform="rotate(-55 -9 140)"/>
+    <use href="#leaf" x="10" y="230" transform="rotate(50 10 230)"/>
+    <use href="#bloomLilac"  x="-12" y="95"/>
+    <use href="#bloomPeach"  x="12"  y="170"/>
+    <use href="#bud"         x="-8"  y="235" transform="rotate(-20 -8 235)"/>
+    <use href="#bloomYellow" x="10"  y="320"/>
+    <use href="#bloomRose"   x="-8"  y="395"/>
+  </g>
+</defs>
+
+<!-- FULL-WIDTH canopy hanging from the top, dense up high, thinning downward.
+     Strands staggered in x and start-height for an organic, non-repeating feel. -->
+<g>
+  <use href="#vine"      transform="translate(40,-30)  scale(1.02)"/>
+  <use href="#vineShort" transform="translate(110,-70) scale(0.92)"/>
+  <use href="#vine"      transform="translate(190,-15) scale(0.9)"/>
+  <use href="#vineShort" transform="translate(270,-90) scale(1.0)"/>
+  <use href="#vine"      transform="translate(345,-45) scale(0.86)"/>
+  <use href="#vineShort" transform="translate(430,-60) scale(0.8)"/>
+  <use href="#vine"      transform="translate(505,-25) scale(0.95)"/>
+  <use href="#vineShort" transform="translate(585,-100) scale(0.82)" opacity="0.9"/>
+  <use href="#vine"      transform="translate(660,-70) scale(0.78)" opacity="0.85"/>
+  <use href="#vineShort" transform="translate(735,-110) scale(0.72)" opacity="0.8"/>
+  <use href="#vine"      transform="translate(810,-55) scale(0.8)" opacity="0.85"/>
+  <use href="#vineShort" transform="translate(885,-95) scale(0.82)" opacity="0.9"/>
+  <use href="#vine"      transform="translate(960,-20) scale(0.95)"/>
+  <use href="#vineShort" transform="translate(1035,-75) scale(0.86)"/>
+  <use href="#vine"      transform="translate(1110,-40) scale(0.9)"/>
+  <use href="#vineShort" transform="translate(1195,-85) scale(0.96)"/>
+  <use href="#vine"      transform="translate(1265,-15) scale(1.0)"/>
+  <use href="#vineShort" transform="translate(1345,-70) scale(0.9)"/>
+  <use href="#vine"      transform="translate(1410,-40) scale(0.94)"/>
+</g>
+</svg>
