@@ -149,11 +149,17 @@ footer p{opacity:.88;margin-bottom:.35rem}
 .legal{border-top:1px solid rgba(239,239,234,.18);padding-top:1.6rem;font-size:.74rem;opacity:.65;line-height:1.7}
 
 /* founder-led hero split */
-.herogrid{display:grid;gap:clamp(1.4rem,4vw,3rem);align-items:center;margin-top:auto;padding-top:5vh}
-@media(min-width:860px){.herogrid{grid-template-columns:1.05fr .92fr}}
-.heroimg img{width:100%;max-width:430px;border-radius:16px;display:block;box-shadow:0 22px 55px rgba(74,52,42,.26);border:1px solid rgba(168,131,78,.45)}
+.herogrid{display:grid;gap:clamp(1.4rem,4vw,3rem);align-items:center;margin-top:auto;padding-top:4vh}
+@media(min-width:860px){.herogrid{grid-template-columns:1.18fr .82fr}}
+.heroimg img{width:100%;max-width:360px;border-radius:16px;display:block;box-shadow:0 22px 55px rgba(74,52,42,.26);border:1px solid rgba(168,131,78,.45)}
 @media(min-width:860px){.heroimg img{margin-left:auto}}
-@media(max-width:859px){.heroimg img{max-width:300px;margin:1.4rem auto 0}}
+@media(max-width:859px){.heroimg img{max-width:280px;margin:1.2rem auto 0}}
+/* generic two-column split (text + image) to balance wide desktop sections */
+.split{display:grid;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+@media(min-width:860px){.split{grid-template-columns:1.08fr .8fr}}
+.simg img{width:100%;max-width:400px;border-radius:16px;display:block;box-shadow:0 20px 50px rgba(74,52,42,.22);border:1px solid rgba(168,131,78,.4)}
+@media(min-width:860px){.simg img{margin-left:auto}}
+@media(max-width:859px){.simg{order:-1}.simg img{max-width:300px;margin:0 auto}}
 /* brand logo lockup (apothecary sprig + serif wordmark) */
 .brandlogo{display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center}
 .brandlogo .sprig{width:24px;height:32px;display:block}
@@ -166,8 +172,17 @@ footer p{opacity:.88;margin-bottom:.35rem}
 }
 @media(max-width:640px){
   section{padding:7vh 7% 8vh}
+  #inicio{min-height:auto !important;padding-top:13vh;padding-bottom:9vh}
+  .herogrid{padding-top:2vh;gap:1.2rem}
+  h1{font-size:clamp(2rem,8.5vw,2.6rem)}
+  h2{font-size:clamp(1.6rem,7vw,2.1rem)}
+  .lead{font-size:1rem}
+  .ctarow{gap:.7rem}
+  .ctarow .btn{flex:1 1 auto;justify-content:center;text-align:center}
   .float{bottom:14px;right:14px;padding:.8rem 1.1rem;font-size:.7rem}
-  .btn{padding:.9rem 1.4rem;font-size:.74rem}
+  .btn{padding:.95rem 1.2rem;font-size:.74rem}
+  .card{padding:1.3rem 1.25rem}
+  .brandlogo .wm{font-size:1.55rem}
 }
 </style>
 </head>
@@ -177,7 +192,7 @@ footer p{opacity:.88;margin-bottom:.35rem}
 <div class="vbadge">v2 · paleta nova</div>
 
 <!-- ============ HERO — fundo TERRA. Só tipografia grande. ============ -->
-<section class="g-terra" id="inicio" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center">
+<section class="g-terra" id="inicio" style="min-height:86vh;display:flex;flex-direction:column;justify-content:center">
   <div class="brandlogo rv">
     <svg class="sprig" viewBox="0 0 26 40" fill="none" aria-hidden="true" style="width:26px;height:38px">
       <g transform="translate(13,6) scale(0.46)">
@@ -212,59 +227,102 @@ footer p{opacity:.88;margin-bottom:.35rem}
 
 <!-- ============ AMANDA — metro ============ -->
 <section class="g-metro" id="amanda">
-  <p class="eyebrow rv">Quem vai cuidar de você</p>
-  <h2 class="rv">Prazer, eu sou a <i>Amanda</i>.</h2>
-  <p class="microcopy rv" style="margin-top:-.6rem;margin-bottom:1.4rem">Cirurgiã-dentista. <span class="pend" data-fill="cro">CRO-SP 172448</span>.</p>
-  <div class="story rv">
-    <p>Sou dentista, formada e apaixonada por uma parte do corpo que a maioria das pessoas só lembra quando dói. Passei anos vendo gente boa adiar consulta por vergonha, por medo, ou porque uma vez alguém falou alto demais sobre a boca dela.</p>
-    <p>A Botic nasceu disso. Eu queria um lugar onde a pessoa entra sem prender a respiração.</p>
-  </div>
-  <div class="blist rv">
-    <div>Nas primeiras semanas, quem responde no WhatsApp sou eu. A avaliação é comigo, do começo ao fim.</div>
-    <div>Toda proposta sai da sua avaliação, nunca de uma tabela pronta.</div>
-    <div>Se o melhor pra você hoje for só uma limpeza e voltar daqui a um ano, é isso que eu vou te dizer.</div>
-    <div>Eu não prometo resultado. Eu prometo que você vai entender exatamente o que está acontecendo na sua boca, e decidir com calma.</div>
-  </div>
-  <div class="ctarow rv">
-    <a class="btn btn-p" data-wa="AMANDA-SORRISO" href="#">Me conta seu caso</a>
+  <div class="split">
+   <div>
+    <p class="eyebrow rv">Quem vai cuidar de você</p>
+    <h2 class="rv">Prazer, eu sou a <i>Amanda</i>.</h2>
+    <p class="microcopy rv" style="margin-top:-.6rem;margin-bottom:1.4rem">Cirurgiã-dentista · <span class="pend" data-fill="cro">CRO-SP 172448</span> · formada pelo ICT-UNESP · pós-graduanda pelo Hospital Albert Einstein.</p>
+    <div class="story rv">
+      <p>Sou dentista, formada e apaixonada por uma parte do corpo que a maioria das pessoas só lembra quando dói. Passei anos vendo gente boa adiar consulta por vergonha, por medo, ou porque uma vez alguém falou alto demais sobre a boca dela.</p>
+      <p>A Botica nasceu disso. Eu queria um lugar onde a pessoa entra sem prender a respiração.</p>
+    </div>
+    <div class="blist rv">
+      <div>Nas primeiras semanas, quem responde no WhatsApp sou eu. A avaliação é comigo, do começo ao fim.</div>
+      <div>Toda proposta sai da sua avaliação, nunca de uma tabela pronta.</div>
+      <div>Se o melhor pra você hoje for só uma limpeza e voltar daqui a um ano, é isso que eu vou te dizer.</div>
+      <div>Eu não prometo resultado. Eu prometo que você vai entender exatamente o que está acontecendo na sua boca, e decidir com calma.</div>
+    </div>
+    <div class="ctarow rv">
+      <a class="btn btn-p" data-wa="AMANDA-SORRISO" href="#">Me conta seu caso</a>
+    </div>
+   </div>
+   <div class="simg rv">
+     <img src="amanda-jaleco.jpeg" alt="Dra. Amanda Marques de jaleco, cirurgiã-dentista formada pelo ICT-UNESP">
+   </div>
   </div>
 </section>
 
 <!-- ============ TRATAMENTOS — forest ============ -->
 <section class="g-forest" id="tratamentos">
-  <p class="eyebrow rv">O que a gente faz</p>
-  <h2 class="rv">Começa pequeno.<br>Cresce só se <i>fizer sentido</i>.</h2>
-  <p class="lead rv">Ninguém precisa entrar aqui já decidindo um plano grande. Quase toda história boa começa por uma limpeza bem-feita e uma conversa honesta.</p>
+  <p class="eyebrow rv">Os cuidados da Botica</p>
+  <h2 class="rv">Tudo pro seu sorriso,<br>num lugar <i>só</i>.</h2>
+  <p class="lead rv">Com a Dra. Amanda: a estética e a saúde do seu sorriso, do começo ao fim. E quando o seu caso pede mais, a Botica tem um time de especialistas para cirurgia e implante também.</p>
 
   <div class="grid cards2 rv">
     <div class="card">
       <span class="knum">01</span>
-      <h3>Limpeza e check-up completo</h3>
-      <p>O primeiro passo, pra quase todo mundo. Uma hora comigo: eu conheço sua boca de perto, você sai sabendo exatamente o que faz sentido, e o que não faz.</p>
-      <p class="note">É por aqui que eu recomendo começar, mesmo que seu sonho seja outro.</p>
+      <h3>Limpeza e check-up</h3>
+      <p>O jeito de começar, pra quase todo mundo. Uma hora comigo: eu conheço sua boca de perto e você sai sabendo exatamente o que faz sentido, e o que não faz.</p>
+      <p class="note">Comece por aqui, mesmo que seu sonho seja outro.</p>
     </div>
     <div class="card">
       <span class="knum">02</span>
-      <h3>Lentes e resinas</h3>
-      <p>Quando o caso permite, eu trabalho com técnicas de mínimo desgaste. Quando não permite, eu te explico exatamente por quê, antes de qualquer coisa começar.</p>
-      <p class="note">Te explico o porquê, com o seu dente na frente, na avaliação.</p>
-    </div>
-    <div class="card">
-      <span class="knum">03</span>
       <h3>Clareamento</h3>
-      <p>O pedido mais comum, e o que gera mais dúvida. Existe mais de um caminho, e o que faz sentido depende da sua sensibilidade, do seu esmalte e da sua rotina.</p>
+      <p>O pedido mais comum, e o que gera mais dúvida. Existe mais de um caminho, e o certo depende da sua sensibilidade, do seu esmalte e da sua rotina.</p>
       <p class="note">Nem todo mundo precisa. Eu te falo se for o seu caso.</p>
     </div>
     <div class="card">
+      <span class="knum">03</span>
+      <h3>Resina e lentes</h3>
+      <p>A estética do sorriso, do meu jeito: natural. Quando o caso permite, técnicas de mínimo desgaste. Quando não, eu te explico por quê antes de começar.</p>
+      <p class="note">Com o seu dente na frente, na avaliação.</p>
+    </div>
+    <div class="card">
       <span class="knum">04</span>
-      <h3>Cronograma da noiva</h3>
-      <p>Tem data marcada? Então a gente trabalha de trás pra frente. Cada etapa tem um tempo, e apressar sorriso é como apressar bolo: dá pra ver.</p>
-      <p class="note">Me manda o mês do casamento que eu te monto o caminho.</p>
+      <h3>Botox e harmonização</h3>
+      <p>Harmonização orofacial para suavizar o que já é seu, com naturalidade. O sorriso e o rosto conversam, e eu cuido dos dois.</p>
+      <p class="note">Sutil de propósito. Ninguém precisa saber, só sentir.</p>
     </div>
   </div>
+
+  <div class="rv" style="margin-top:1.8rem;border:1px solid rgba(239,239,234,.28);border-radius:16px;padding:1.4rem 1.6rem;background:rgba(255,255,255,.05)">
+    <h3 style="font-weight:700;font-size:1.04rem;margin-bottom:.8rem">Precisa ir além da estética? A Botica tem time.</h3>
+    <div class="blist" style="margin:0">
+      <div>Cirurgias, extrações e biópsias com o <b>Dr. Gabriel Cortez</b>, cirurgião bucomaxilo.</div>
+      <div>Implantes e próteses com o <b>Dr. Jadson Domingues</b>, implantodontista e protesista.</div>
+    </div>
+  </div>
+
   <div class="ctarow rv">
     <a class="btn btn-p" data-wa="SERVICOS-SORRISO" href="#">Falar sobre o meu caso</a>
     <a class="btn btn-s" data-wa="SERVICOS-NOIVA" href="#">Sou noiva, tenho data</a>
+  </div>
+</section>
+
+<!-- ============ DATE NIGHT — assinatura Botica ============ -->
+<section class="g-nude" id="date-night">
+  <div class="rv" style="max-width:52em;margin:0 auto;border:1.5px solid rgba(168,131,78,.55);border-radius:20px;padding:clamp(1.6rem,4vw,3rem);background:rgba(255,255,255,.34)">
+    <svg viewBox="0 0 26 40" width="26" height="40" fill="none" aria-hidden="true" style="display:block;margin-bottom:.6rem">
+      <g transform="translate(13,7) scale(0.46)">
+        <path d="M0,66 C 0,54 -1,45 0,39" stroke="#A8834E" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M0,39 C -9,25 -9,4 2,-4 C 12,-9 23,-4 24,7 C 25,14 18,19 12,15 C 16,9 9,8 7,14 C 4,21 2,30 0,39 Z" stroke="#A8834E" stroke-width="3.4" fill="none" stroke-linejoin="round"/>
+        <path d="M8,15 C 6,9 6,1 7,-5" stroke="#C9A24E" stroke-width="5" fill="none" stroke-linecap="round"/>
+      </g>
+    </svg>
+    <p class="eyebrow rv">Assinatura Botica · toda sexta</p>
+    <h2 class="rv">Date <i>Night</i>.</h2>
+    <p class="rv" style="font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,2.4vw,1.5rem);color:var(--brown);margin:-.4rem 0 1.2rem">30 minutos. Sexta à tarde. Você sai pronta.</p>
+    <p class="lead rv">O ritual rápido pra chegar radiante no seu programa. Sem procedimento, sem enrolação: só o seu sorriso no ponto, em meia hora.</p>
+    <div class="blist rv">
+      <div>Limpeza e polimento express, aquela sensação de recém-saída do dentista.</div>
+      <div>Remoção de manchas superficiais de café, vinho e chá, pro sorriso mais claro na hora.</div>
+      <div>Finalização com hálito fresco.</div>
+      <div>Hidratação labial pra fechar o conjunto.</div>
+    </div>
+    <div class="ctarow rv">
+      <a class="btn btn-p" data-wa="DATENIGHT" href="#">Quero o Date Night</a>
+    </div>
+    <p class="microcopy rv">Sexta é dia. Me chama que eu reservo o seu horário.</p>
   </div>
 </section>
 
@@ -281,7 +339,7 @@ footer p{opacity:.88;margin-bottom:.35rem}
     <div class="step">
       <span class="n">2</span>
       <h3>A gente marca a sua avaliação</h3>
-      <p>Você vem à Botic. Eu escuto sua história, olho sua boca com calma e explico o que vejo, em português, não em odontês.</p>
+      <p>Você vem à Botica. Eu escuto sua história, olho sua boca com calma e explico o que vejo, em português, não em odontês.</p>
     </div>
     <div class="step">
       <span class="n">3</span>
@@ -391,7 +449,7 @@ footer p{opacity:.88;margin-bottom:.35rem}
 <!-- ============ AGENDA — forest ============ -->
 <section class="g-forest" id="agenda">
   <p class="eyebrow rv">Onde a gente fica</p>
-  <h2 class="rv">A Botic abre em <i>20 de agosto</i>.</h2>
+  <h2 class="rv">A Botica abre em <i>20 de agosto</i>.</h2>
   <p class="lead rv">A agenda das primeiras semanas está sendo montada agora. Se você quer uma das primeiras conversas, me chama que eu seguro o seu lugar.</p>
 
   <div class="inforow rv">
@@ -425,14 +483,14 @@ footer p{opacity:.88;margin-bottom:.35rem}
     <div>
       <h4>Navegue</h4>
       <p><a href="#amanda">A Amanda</a></p>
-      <p><a href="#tratamentos">Tratamentos</a></p>
+      <p><a href="#tratamentos">Cuidados</a></p>
       <p><a href="#valores">Valores</a></p>
       <p><a href="#perguntas">Perguntas reais</a></p>
     </div>
     <div>
       <h4>Fale com a gente</h4>
       <p><a data-wa="FOOTER-SORRISO" href="#">WhatsApp</a></p>
-      <p><a href="https://instagram.com/boticodontologia" target="_blank" rel="noopener">Instagram da Botic</a></p>
+      <p><a href="https://instagram.com/odontoamandamarques" target="_blank" rel="noopener">Instagram da Amanda</a></p>
       <p><a href="https://instagram.com/odontoamandamarques" target="_blank" rel="noopener">Instagram da Amanda</a></p>
     </div>
     <div>
@@ -467,6 +525,7 @@ const WA_MSG = {
   "AMANDA-SORRISO":   "Oi Amanda! Vim pelo site. SORRISO. Queria te contar o meu caso. [SITE-V2-AMANDA-SORRISO]",
   "SERVICOS-SORRISO": "Oi Amanda! Vim pelo site. SORRISO. Queria falar sobre tratamento. [SITE-V2-SERVICOS-SORRISO]",
   "SERVICOS-NOIVA":   "Oi Amanda! Vim pelo site. NOIVA. Meu casamento é em ____. [SITE-V2-SERVICOS-NOIVA]",
+  "DATENIGHT":        "Oi Amanda! Vim pelo site. DATENIGHT. Quero reservar o ritual de sexta. [SITE-V2-DATENIGHT]",
   "COMO-SORRISO":     "Oi Amanda! Vim pelo site. SORRISO. Quero começar pela limpeza e check-up. [SITE-V2-COMO-SORRISO]",
   "PRECO-SORRISO":    "Oi Amanda! Vim pelo site. SORRISO. Queria perguntar sobre valores. [SITE-V2-PRECO-SORRISO]",
   "FAQ-SORRISO":      "Oi Amanda! Vim pelo site. SORRISO. Tenho uma dúvida que não estava lá. [SITE-V2-FAQ-SORRISO]",
