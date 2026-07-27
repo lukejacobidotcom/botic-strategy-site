@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Botica Clinic | Dra. Amanda Marques | Odontologia estética · Paraíso, São Paulo</title>
-<meta name="description" content="Odontologia estética com a Dra. Amanda Marques em São Paulo. Versão 2 da paleta: Caramelo Picante, Metrópole, Verde Terapêutico.">
+<meta name="description" content="Odontologia estética e saúde do sorriso com a Dra. Amanda Marques, no Paraíso, São Paulo. Sem medo, sem julgamento, sem pressa. Inauguração 20 de agosto.">
 <meta name="robots" content="noindex,nofollow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +20,7 @@
      e um sistema precisa de um escuro pra carregar texto.          */
   --terra:#C8572A; --terra-deep:#A8451F;
   --wall:#EDEAE3;   /* fundo linho pálido do papel de parede floral */
+  --botanical-bg:url("/homepagev2/desktop-2400x1350.webp");  /* papel de parede floral (responsivo) */
   --metro:#EFEFEA; --metro-hi:#F7F7F3;
   --verde:#7E9E4E; --verde-deep:#4F6B32;
   --forest:#26301C;              /* fundo escuro derivado do verde */
@@ -45,16 +46,18 @@ section{padding:9vh 8% 10vh;position:relative}
    3) o fundo linho pálido (nada mais claro que um dente) */
 .g-terra{
   background:
-    linear-gradient(180deg, rgba(237,234,227,0) 0%, rgba(237,234,227,0) 42%, rgba(237,234,227,.72) 82%, rgba(237,234,227,.9) 100%),
-    url('floral.svg') top center / cover no-repeat,
-    linear-gradient(180deg, var(--wall) 0%, #E8E3DA 100%);
+    linear-gradient(180deg, rgba(237,234,227,0) 0%, rgba(237,234,227,0) 44%, rgba(237,234,227,.72) 82%, rgba(237,234,227,.94) 100%),
+    var(--botanical-bg) center top / cover no-repeat,
+    #EDEAE3;
   color:var(--ink);
 }
+@media(max-width:1024px){ :root{ --botanical-bg:url("/homepagev2/tablet-1600x1200.webp"); } }
 @media(max-width:640px){
+  :root{ --botanical-bg:url("/homepagev2/mobile-1080x1920.webp"); }
   .g-terra{ background:
-    linear-gradient(180deg, rgba(237,234,227,0) 0%, rgba(237,234,227,.5) 55%, rgba(237,234,227,.92) 100%),
-    url('floral.svg') top center / 1000px auto no-repeat,
-    linear-gradient(180deg, var(--wall) 0%, #E8E3DA 100%); }
+    linear-gradient(180deg, rgba(237,234,227,0) 0%, rgba(237,234,227,.45) 58%, rgba(237,234,227,.92) 100%),
+    var(--botanical-bg) center top / cover no-repeat,
+    #EDEAE3; }
 }
 
 .mono{font-family:var(--serif);font-style:italic;font-weight:600;letter-spacing:.02em;text-align:center;font-size:1.7rem;opacity:.95}
@@ -220,7 +223,7 @@ footer p{opacity:.88;margin-bottom:.35rem}
     <p class="microcopy rv">Quem responde é a Amanda, normalmente em até 5 minutos. Não é robô.</p>
    </div>
    <div class="heroimg rv">
-     <img src="amanda-hero.jpeg" alt="Dra. Amanda Marques, cirurgiã-dentista, fundadora da Botica Clinic" loading="eager">
+     <img src="/homepagev2/amanda-hero.jpeg" alt="Dra. Amanda Marques, cirurgiã-dentista, fundadora da Botica Clinic" loading="eager">
    </div>
   </div>
 </section>
@@ -247,7 +250,7 @@ footer p{opacity:.88;margin-bottom:.35rem}
     </div>
    </div>
    <div class="simg rv">
-     <img src="amanda-jaleco.jpeg" alt="Dra. Amanda Marques de jaleco, cirurgiã-dentista formada pelo ICT-UNESP">
+     <img src="/homepagev2/amanda-jaleco.jpeg" alt="Dra. Amanda Marques de jaleco, cirurgiã-dentista formada pelo ICT-UNESP">
    </div>
   </div>
 </section>
@@ -319,6 +322,7 @@ footer p{opacity:.88;margin-bottom:.35rem}
       <div>Finalização com hálito fresco.</div>
       <div>Hidratação labial pra fechar o conjunto.</div>
     </div>
+    <p class="rv" style="font-weight:300;font-size:.95rem;opacity:.9;max-width:44em;margin-top:.2rem">Quer chegar ainda mais pronta? Dá pra somar um retoque de <b style="font-weight:600">botox / harmonização</b> ao seu Date Night. Me conta que eu monto a versão completa pra você.</p>
     <div class="ctarow rv">
       <a class="btn btn-p" data-wa="DATENIGHT" href="#">Quero o Date Night</a>
     </div>
@@ -490,8 +494,7 @@ footer p{opacity:.88;margin-bottom:.35rem}
     <div>
       <h4>Fale com a gente</h4>
       <p><a data-wa="FOOTER-SORRISO" href="#">WhatsApp</a></p>
-      <p><a href="https://instagram.com/odontoamandamarques" target="_blank" rel="noopener">Instagram da Amanda</a></p>
-      <p><a href="https://instagram.com/odontoamandamarques" target="_blank" rel="noopener">Instagram da Amanda</a></p>
+      <p><a href="https://instagram.com/odontoamandamarques" target="_blank" rel="noopener">Instagram</a></p>
     </div>
     <div>
       <h4>Onde</h4>
