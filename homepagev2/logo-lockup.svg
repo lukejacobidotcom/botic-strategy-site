@@ -1,0 +1,14 @@
+<svg viewBox="0 0 250 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Botica Clinic">
+  <!-- B + seedling mark -->
+  <g transform="translate(2,10) scale(1.15)" fill="none" stroke="#26301C" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19,20 V57"/>
+    <path d="M19,20 C33,20 40,22.5 40,28.5 C40,34.5 33,37 19,37"/>
+    <path d="M19,37 C36,37 44,40 44,47 C44,54 36,57 19,57"/>
+    <path d="M19,20 V9"/>
+    <path d="M19,9 C12,10.5 8,7 6.5,1.5 C12.5,0.5 18,4 19,9 Z" fill="#26301C" stroke="none"/>
+    <path d="M19,9 C26,10.5 30,7 31.5,1.5 C25.5,0.5 20,4 19,9 Z" fill="#26301C" stroke="none"/>
+  </g>
+  <!-- wordmark -->
+  <text x="74" y="56" font-family="Georgia, 'Times New Roman', serif" font-size="44" fill="#26301C">Botica</text>
+  <text x="76" y="78" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="5" fill="#26301C">CLINIC</text>
+</svg>

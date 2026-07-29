@@ -168,6 +168,10 @@ footer p{opacity:.88;margin-bottom:.35rem}
 .brandlogo .sprig{width:24px;height:32px;display:block}
 .brandlogo .wm{font-family:var(--serif);font-size:1.9rem;line-height:1;letter-spacing:.01em;color:inherit}
 .brandlogo .wm span{display:block;font-family:var(--sans);font-weight:600;font-size:.52rem;letter-spacing:.44em;text-transform:uppercase;opacity:.72;margin-top:.3rem}
+.brandmark{display:inline-block;line-height:0;margin:0 0 clamp(1.7rem,4.5vw,2.9rem);align-self:flex-start}
+.brandmark-img{display:block;width:180px;height:auto}
+.eyebrow .opening{opacity:.5;font-weight:400}
+@media(max-width:640px){.brandmark-img{width:140px}}
 /* "video" stand-in: Amanda's still breathes like footage (reduced-motion safe) */
 @media(prefers-reduced-motion:no-preference){
   @keyframes kb{0%{transform:scale(1)}100%{transform:scale(1.055)}}
@@ -196,20 +200,12 @@ footer p{opacity:.88;margin-bottom:.35rem}
 
 <!-- ============ HERO — fundo TERRA. Só tipografia grande. ============ -->
 <section class="g-terra" id="inicio" style="min-height:86vh;display:flex;flex-direction:column;justify-content:center">
-  <div class="brandlogo rv" style="background:rgba(247,247,243,.86);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);padding:.8rem 1.6rem .9rem;border-radius:18px;box-shadow:0 12px 36px rgba(74,52,42,.16);border:1px solid rgba(168,131,78,.28);width:-moz-fit-content;width:fit-content;margin:0 auto">
-    <svg class="sprig" viewBox="0 0 52 66" fill="none" stroke="#26301C" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:auto;height:40px">
-      <path d="M19,20 V57"/>
-      <path d="M19,20 C33,20 40,22.5 40,28.5 C40,34.5 33,37 19,37"/>
-      <path d="M19,37 C36,37 44,40 44,47 C44,54 36,57 19,57"/>
-      <path d="M19,20 V9"/>
-      <path d="M19,9 C12,10.5 8,7 6.5,1.5 C12.5,0.5 18,4 19,9 Z" fill="#26301C" stroke="none"/>
-      <path d="M19,9 C26,10.5 30,7 31.5,1.5 C25.5,0.5 20,4 19,9 Z" fill="#26301C" stroke="none"/>
-    </svg>
-    <div class="wm">Botica<span>Clinic</span></div>
-  </div>
+  <a href="/homepagev2/" class="brandmark" aria-label="Botica Clinic — início">
+    <img src="/homepagev2/logo-lockup.svg" alt="Botica Clinic" class="brandmark-img">
+  </a>
   <div class="herogrid">
    <div class="herotext">
-    <p class="eyebrow rv">São Paulo · Paraíso · Inauguração 20 de agosto</p>
+    <p class="eyebrow rv">São Paulo · Paraíso <span class="opening">· Inauguração 20 de agosto</span></p>
     <h1 class="rv">O sorriso é a coluna que falta<br>na sua <i>rotina de beleza</i>.</h1>
     <hr class="hr rv">
     <p class="lead rv">Odontologia estética com a Dra. Amanda Marques. Sem medo, sem julgamento, sem pressa. E sem você descobrir o valor sentada na cadeira.</p>
