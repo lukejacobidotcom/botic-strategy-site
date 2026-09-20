@@ -86,6 +86,11 @@ h1 i,h2 i,.si{font-family:var(--serif);font-style:italic;font-weight:500}
 .lead{font-size:clamp(1rem,2.1vw,1.22rem);font-weight:300;max-width:44em;opacity:.92}
 /* no fundo terra, "lead" vira tamanho grande obrigatoriamente */
 .g-terra .lead{font-size:clamp(1.15rem,2.4vw,1.42rem);font-weight:400;opacity:1}
+/* contraste do topo: halo de linho fosco atrás do texto do hero + h1 mais firme */
+.g-terra .herotext{position:relative;z-index:1}
+.g-terra .herotext::before{content:"";position:absolute;inset:-1.6rem -1.8rem;z-index:-1;border-radius:22px;background:radial-gradient(125% 115% at 28% 42%, rgba(237,234,227,.94) 0%, rgba(237,234,227,.86) 52%, rgba(237,234,227,.38) 100%);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.g-terra h1{font-weight:400;color:var(--ink)}
+@media(max-width:640px){ .g-terra .herotext::before{inset:-1rem -1.1rem} }
 .hr{width:44px;height:2px;background:var(--terra);border:none;margin:1.6rem 0}
 .g-forest .hr{background:var(--metro)}
 .g-terra .hr{background:var(--terra)}
