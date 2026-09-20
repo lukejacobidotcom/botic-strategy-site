@@ -3,264 +3,272 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agendar avaliação | Botica Clinic</title>
-<meta name="description" content="Escolha o dia e o horário da sua avaliação na Botica Clinic, com a Dra. Amanda Marques, no Paraíso, São Paulo.">
+<title>Agendar avaliação | Botic Odontologia</title>
 <meta name="robots" content="noindex,nofollow">
-<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.Botica)document.documentElement.className=document.documentElement.className.replace(" js","")},2500);</script>
-<link rel="icon" type="image/svg+xml" href="/img/logo/botica-mark.svg">
-<link rel="apple-touch-icon" href="/img/logo/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,500;1,500;1,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/botica.css">
-<!--
-  /agendar/  =  o link de agendamento que a Botica divulga (bio, WhatsApp, Google, anúncios).
+<style>
+:root{
+  --nude:#EFE3DB; --olive:#656237; --olive-deep:#4C4A28; --cream:#E9DFD4; --cream-hi:#FBF6EF;
+  --esp:#141210; --rose:#C9A38C; --brown:#7B5743;
+  --sans:'Inter',-apple-system,system-ui,sans-serif; --serif:'Playfair Display',Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--esp);color:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
 
-  COMO FUNCIONA HOJE
-    A pessoa escolhe motivo, dia e horário e preenche os dados AQUI no site.
-    O botão abre o WhatsApp com tudo escrito. A Amanda confirma e lança no Simples Dental.
-    Nenhum dado passa por servidor nosso: vai direto do celular da pessoa pro WhatsApp da clínica.
+.wrap{max-width:840px;margin:0 auto;padding:6vh 7% 12vh}
+.mono{font-family:var(--serif);font-style:italic;font-weight:600;font-size:1.6rem;text-align:center}
+.mono small{display:block;font-family:var(--sans);font-style:normal;font-weight:400;font-size:.55rem;letter-spacing:.42em;text-transform:uppercase;margin-top:.2rem;opacity:.72}
 
-  POR QUE NÃO GRAVA DIRETO NO SIMPLES DENTAL
-    O Simples Dental não tem API aberta (Central de Ajuda, artigo 2667300, atualizado em 12/08/2026)
-    e a página de agendamento deles bloqueia exibição dentro de outro site (X-Frame-Options: SAMEORIGIN).
-    Se o Simples Dental liberar API ou embed pro domínio da Botica, só este arquivo muda.
+.head{text-align:center;margin:5vh 0 1rem}
+.eyebrow{font-size:.63rem;letter-spacing:.36em;text-transform:uppercase;font-weight:600;opacity:.6;margin-bottom:1rem}
+h1{font-weight:300;font-size:clamp(1.9rem,5.4vw,3rem);line-height:1.15}
+h1 i{font-family:var(--serif);font-style:italic;font-weight:500}
+.sub{font-weight:300;font-size:1rem;opacity:.82;max-width:34em;margin:1.2rem auto 0}
+.hr{width:44px;height:2px;background:var(--rose);border:none;margin:2.4rem auto}
 
-  Horários oferecidos: BOTICA.agenda em /js/botica.js.
--->
+/* ---- steps ---- */
+.stepnum{display:flex;align-items:center;gap:.7rem;margin:3rem 0 1.1rem}
+.stepnum b{width:26px;height:26px;border-radius:50%;background:var(--rose);color:var(--esp);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;flex-shrink:0}
+.stepnum span{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;opacity:.75}
+
+/* ---- day picker ---- */
+.days{display:flex;gap:.6rem;overflow-x:auto;padding-bottom:.7rem;scrollbar-width:thin}
+.days::-webkit-scrollbar{height:4px}
+.days::-webkit-scrollbar-thumb{background:rgba(201,163,140,.4);border-radius:4px}
+.day{flex:0 0 auto;min-width:74px;padding:.85rem .5rem;border-radius:12px;border:1px solid rgba(233,223,212,.22);background:rgba(255,255,255,.05);text-align:center;cursor:pointer;transition:all .2s}
+.day:hover{border-color:var(--rose);transform:translateY(-2px)}
+.day.on{background:var(--rose);border-color:var(--rose);color:var(--esp)}
+.day .dow{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;opacity:.7}
+.day .num{font-family:var(--serif);font-style:italic;font-size:1.5rem;font-weight:600;line-height:1.2}
+.day .mon{font-size:.62rem;opacity:.7;text-transform:uppercase;letter-spacing:.1em}
+.day.on .dow,.day.on .mon{opacity:.85}
+
+/* ---- time slots ---- */
+.times{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:.6rem}
+.slot{padding:.85rem .4rem;border-radius:10px;border:1px solid rgba(233,223,212,.22);background:rgba(255,255,255,.05);text-align:center;cursor:pointer;font-size:.92rem;font-weight:600;transition:all .2s}
+.slot:hover{border-color:var(--rose);background:rgba(201,163,140,.14)}
+.slot.on{background:var(--rose);border-color:var(--rose);color:var(--esp)}
+.empty{opacity:.55;font-weight:300;font-size:.92rem;padding:1.4rem 0}
+
+/* ---- confirm ---- */
+.confirm{margin-top:2.6rem;border:1.5px solid var(--rose);border-radius:16px;padding:1.6rem;background:rgba(201,163,140,.08);opacity:0;transform:translateY(10px);transition:all .35s;pointer-events:none}
+.confirm.on{opacity:1;transform:none;pointer-events:auto}
+.confirm .lb{font-size:.63rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;opacity:.65;margin-bottom:.5rem}
+.confirm .pick{font-family:var(--serif);font-style:italic;font-weight:600;font-size:1.5rem;color:var(--rose);margin-bottom:.4rem}
+.confirm p{font-size:.88rem;font-weight:300;opacity:.85}
+.btn{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.4rem;padding:1.05rem 1.9rem;border-radius:999px;background:var(--rose);color:var(--esp);text-decoration:none;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;transition:all .25s;border:none;cursor:pointer;font-family:var(--sans)}
+.btn:hover{background:#d8b39d;transform:translateY(-2px)}
+.btn svg{width:18px;height:18px}
+
+.alt{margin-top:3.5rem;padding-top:2rem;border-top:1px solid rgba(233,223,212,.14);text-align:center}
+.alt p{font-size:.9rem;font-weight:300;opacity:.78}
+.alt a{color:var(--rose);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(201,163,140,.4)}
+
+footer{text-align:center;margin-top:4rem;font-size:.72rem;opacity:.5;font-weight:300;line-height:1.8}
+footer a{color:inherit}
+.pend{background:rgba(201,163,140,.28);border-bottom:1px dashed var(--rose);padding:0 .2rem;border-radius:3px}
+
+@media(max-width:600px){
+  .wrap{padding:5vh 6% 10vh}
+  .times{grid-template-columns:repeat(auto-fill,minmax(80px,1fr))}
+}
+</style>
 </head>
-<body class="g-wall">
-<div class="topbar"><i id="prog"></i></div>
+<body>
+<div class="wrap">
 
-<header class="topnav">
-  <a href="/homepagev2/" class="brandmark" aria-label="Botica Clinic, início"><img src="/img/logo/botica-horizontal.svg" alt="Botica Clinic" class="brandmark-img" width="160" height="34"></a>
-  <a class="back" href="/homepagev2/">Voltar pro site</a>
-</header>
+  <div class="mono">AM<small>Botic Odontologia</small></div>
 
-<main>
-<section class="g-wall pg-hero" id="inicio">
-  <div class="bk">
-    <p class="eyebrow">Agendamento</p>
-    <h1>Escolha o melhor horário pra sua <i>avaliação</i>.</h1>
-    <hr class="hr">
-    <p class="lead">Uma hora comigo, com calma. Você escolhe aqui e eu confirmo com você pelo WhatsApp, normalmente no mesmo dia.</p>
-
-    <form id="bk-form" novalidate>
-      <div class="bk-step">
-        <h2><b>1</b> O que te traz aqui?</h2>
-        <div class="bk-field">
-          <label for="bk-motivo">Motivo da consulta</label>
-          <select id="bk-motivo" name="motivo" required>
-            <option value="">Escolha uma opção</option>
-            <option>Avaliação e check-up</option>
-            <option>Limpeza</option>
-            <option>Clareamento</option>
-            <option>Lentes ou facetas</option>
-            <option>Botox e harmonização</option>
-            <option>Date Night (sexta)</option>
-            <option>Cirurgia ou extração</option>
-            <option>Implante ou prótese</option>
-            <option>Dor ou urgência</option>
-            <option>Outro</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="bk-step">
-        <h2 id="bk-day-t"><b>2</b> Escolha o dia</h2>
-        <div class="bk-days" id="bk-days" role="group" aria-labelledby="bk-day-t"></div>
-      </div>
-
-      <div class="bk-step">
-        <h2 id="bk-slot-t"><b>3</b> Escolha o horário</h2>
-        <div class="bk-slots" id="bk-slots" role="group" aria-labelledby="bk-slot-t"><p class="bk-empty">Escolha um dia acima.</p></div>
-      </div>
-
-      <div class="bk-step">
-        <h2><b>4</b> Seus dados</h2>
-        <div class="bk-grid">
-          <div class="bk-field bk-full">
-            <label for="bk-nome">Nome completo</label>
-            <input id="bk-nome" name="nome" autocomplete="name" required>
-          </div>
-          <div class="bk-field">
-            <label for="bk-cel">Celular com DDD</label>
-            <input id="bk-cel" name="celular" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(11) 90000-0000" required>
-          </div>
-          <div class="bk-field">
-            <label for="bk-nasc">Data de nascimento</label>
-            <input id="bk-nasc" name="nascimento" inputmode="numeric" autocomplete="bday" placeholder="dd/mm/aaaa" maxlength="10">
-            <p class="hint">Opcional. Ajuda a deixar o seu cadastro pronto.</p>
-          </div>
-          <div class="bk-field">
-            <label for="bk-tipo">Você já é paciente?</label>
-            <select id="bk-tipo" name="tipo">
-              <option>Primeira vez na Botica</option>
-              <option>Já sou paciente</option>
-            </select>
-          </div>
-          <div class="bk-field bk-full">
-            <label for="bk-obs">Algo que eu deva saber antes?</label>
-            <textarea id="bk-obs" name="obs" maxlength="400" placeholder="Opcional. Ex.: tenho medo, prefiro outro horário se esse não der."></textarea>
-          </div>
-        </div>
-        <label class="bk-consent"><input type="checkbox" id="bk-ok" required><span>Autorizo a Botica Clinic a usar esses dados pra confirmar e organizar o meu agendamento, conforme a <a href="/politica-de-privacidade/">Política de Privacidade</a>.</span></label>
-      </div>
-
-      <p class="bk-error" id="bk-error" role="alert"></p>
-      <div class="ctarow" data-mbar-anchor>
-        <button type="submit" class="btn btn-p">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.5-.4M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 18.2c-1.6 0-3.2-.4-4.6-1.3l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2"/></svg>
-          Enviar pedido pelo WhatsApp
-        </button>
-        <a class="btn btn-s" data-wa-tag="SITE-AGENDAR-CONVERSA" data-wa-msg="SORRISO. Queria conversar antes de marcar." href="https://wa.me/5511970873407">Prefiro conversar antes</a>
-      </div>
-      <div class="bk-summary" id="bk-done" hidden>
-        <p><b>Pedido pronto.</b> O WhatsApp abriu com tudo escrito: é só tocar em enviar. Eu confirmo o horário com você por lá.</p>
-        <p style="margin-top:.5rem"><a id="bk-again" href="#" target="_blank" rel="noopener">O WhatsApp não abriu? Toque aqui.</a></p>
-      </div>
-    </form>
-
-    <ul class="trust" style="margin-top:2.4rem" aria-label="Informações">
-      <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fill="horario">Seg, ter, qui e sex · 10h às 16h</span></li>
-      <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fill="endereco">Rua Correia Dias, 97 · Cj 113 · Paraíso</span></li>
-    </ul>
+  <div class="head">
+    <p class="eyebrow">Avaliação · São Paulo</p>
+    <h1>Escolha o melhor dia<br>pro seu <i>sorriso</i>.</h1>
+    <p class="sub">Uma hora, comigo. A gente conversa, eu conheço sua boca de perto, e você sai sabendo exatamente o que faz sentido pra você.</p>
   </div>
-</section>
-</main>
 
-<footer>
-  <div class="legal" style="border-top:0;padding-top:0">
-    <p><span data-fill="rt">Dra. Amanda Marques</span>. Cirurgiã-dentista. <span data-fill="cro">CRO-SP 172448</span>. Responsável Técnica pela Botica Clinic.</p>
-    <p><span data-fill="endereco">Rua Correia Dias, 97 · Cj 113 · Paraíso</span> · <span data-fill="cidade">São Paulo - SP · CEP 04006-050</span></p>
-    <p><a href="/politica-de-privacidade/">Política de Privacidade</a> · <button type="button" data-consent-review>Preferências de cookies</button></p>
+  <hr class="hr">
+
+  <div class="stepnum"><b>1</b><span>Escolha o dia</span></div>
+  <div class="days" id="days"></div>
+
+  <div class="stepnum"><b>2</b><span>Escolha o horário</span></div>
+  <div class="times" id="times"><p class="empty">Selecione um dia acima.</p></div>
+
+  <div class="confirm" id="confirm">
+    <p class="lb">Seu horário</p>
+    <p class="pick" id="pick"></p>
+    <p>Toque abaixo e o WhatsApp abre com esse horário já escrito. Eu confirmo com você em seguida, pessoalmente.</p>
+    <button class="btn" id="go">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.5-.4M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 18.2c-1.6 0-3.2-.4-4.6-1.3l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2"/></svg>
+      Confirmar no WhatsApp
+    </button>
   </div>
-</footer>
 
-<script src="/js/botica.js"></script>
+  <div class="alt">
+    <p>Prefere só conversar antes? <a id="justtalk" href="#">Me manda uma mensagem.</a><br>
+    Pode perguntar qualquer coisa, inclusive valores. Não te compromete com nada.</p>
+  </div>
+
+  <footer>
+    Dra. Amanda Marques · Cirurgiã-dentista · <span class="pend" id="crof">CRO-SP [número]</span><br>
+    Botic Odontologia · São Paulo · Inauguração 20 de agosto<br>
+    <a href="/politica-de-privacidade/">Política de Privacidade</a>
+  </footer>
+
+</div>
+
 <script>
-(function () {
-  var B = window.BOTICA;
-  var DOW = ["dom", "seg", "ter", "qua", "qui", "sex", "sáb"];
-  var DOWFULL = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado"];
-  var MONTH = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
-  var MONTHFULL = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
-  var src = (new URLSearchParams(location.search).get("s") || "DIRETO").replace(/[^A-Z0-9_-]/gi, "").toUpperCase().slice(0, 40) || "DIRETO";
-  var sel = { day: null, time: null };
-  var $ = function (id) { return document.getElementById(id); };
+/* =======================================================================
+   /agendar/  —  the one booking link Botic owns.
 
-  // motivo pré-escolhido quando a pessoa vem de uma página de cuidado
-  var PRE = { LENTES: "Lentes ou facetas", CLAREAMENTO: "Clareamento", BOTOX: "Botox e harmonização", DATENIGHT: "Date Night (sexta)" };
-  Object.keys(PRE).forEach(function (k) { if (src.indexOf(k) > -1) $("bk-motivo").value = PRE[k]; });
+   Put THIS url everywhere: Instagram bio, WhatsApp, cards, Google Business.
+   https://boticaestetica.com/agendar/     Never a raw vendor URL.
 
-  function days() {
-    var out = [], d = new Date();
-    d.setHours(0, 0, 0, 0);
-    for (var i = 1; i <= (B.agenda.diasAFrente || 21); i++) {
-      var x = new Date(d);
-      x.setDate(d.getDate() + i);
-      if ((B.agenda.dias[x.getDay()] || []).length) out.push(x);
-    }
-    return out;
-  }
-  function renderDays() {
-    var box = $("bk-days");
-    box.innerHTML = "";
-    days().forEach(function (d) {
-      var b = document.createElement("button");
-      b.type = "button";
-      b.className = "bk-day";
-      b.setAttribute("aria-pressed", "false");
-      b.setAttribute("aria-label", DOWFULL[d.getDay()] + ", " + d.getDate() + " de " + MONTHFULL[d.getMonth()]);
-      b.innerHTML = "<small>" + DOW[d.getDay()] + "</small><strong>" + d.getDate() + "</strong><small>" + MONTH[d.getMonth()] + "</small>";
-      b.addEventListener("click", function () {
-        box.querySelectorAll(".bk-day").forEach(function (o) { o.setAttribute("aria-pressed", "false"); });
-        b.setAttribute("aria-pressed", "true");
-        sel.day = d; sel.time = null;
-        renderSlots();
-      });
-      box.appendChild(b);
-    });
-  }
-  function renderSlots() {
-    var box = $("bk-slots");
-    box.innerHTML = "";
-    (B.agenda.dias[sel.day.getDay()] || []).forEach(function (t) {
-      var b = document.createElement("button");
-      b.type = "button";
-      b.className = "bk-slot";
-      b.textContent = t;
-      b.setAttribute("aria-pressed", "false");
-      b.addEventListener("click", function () {
-        box.querySelectorAll(".bk-slot").forEach(function (o) { o.setAttribute("aria-pressed", "false"); });
-        b.setAttribute("aria-pressed", "true");
-        sel.time = t;
-      });
-      box.appendChild(b);
-    });
-  }
+   HOW IT WORKS TODAY (no API needed):
+     Patient picks day + time -> WhatsApp opens with that slot pre-written
+     -> Amanda confirms by hand. A real, working funnel. Nobody books into
+     a void, because a human always confirms.
 
-  // máscaras leves
-  $("bk-cel").addEventListener("input", function (e) {
-    var v = e.target.value.replace(/\D/g, "").slice(0, 11);
-    if (v.length > 6) e.target.value = "(" + v.slice(0, 2) + ") " + v.slice(2, v.length - 4) + "-" + v.slice(-4);
-    else if (v.length > 2) e.target.value = "(" + v.slice(0, 2) + ") " + v.slice(2);
-    else e.target.value = v;
+   WHEN CLINICORP'S API IS LIVE:
+     Only buildSlots() and the confirm handler change. Everything the
+     patient sees stays identical. See clinicorp/ARCHITECTURE.md.
+   ======================================================================= */
+const CFG = {
+  whatsapp:  "5511957876692",
+
+  // First day the clinic can see patients. Doors open 20 Aug 2026.
+  firstDay:  "2026-08-20",
+
+  // How many days forward to offer.
+  daysAhead: 24,
+
+  // Working hours. 0=Sun ... 6=Sat.  [] = closed that day.
+  hours: {
+    1: ["09:00","10:00","11:00","14:00","15:00","16:00","17:00"], // seg
+    2: ["09:00","10:00","11:00","14:00","15:00","16:00","17:00"], // ter
+    3: ["09:00","10:00","11:00","14:00","15:00","16:00","17:00"], // qua
+    4: ["09:00","10:00","11:00","14:00","15:00","16:00","17:00"], // qui
+    5: ["09:00","10:00","11:00","14:00","15:00","16:00"],         // sex
+    6: ["09:00","10:00","11:00"],                                 // sab
+    0: []                                                          // dom - fechado
+  },
+
+  // Leave FALSE. Turning this on shows some slots as already taken, which
+  // manufactures scarcity that isn't real. Once the clinic has actual
+  // bookings the scarcity will be real - don't fake it before then.
+  simulateBookedSlots: false
+};
+
+const DOW   = ["dom","seg","ter","qua","qui","sex","sáb"];
+const MONTH = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+const DOWFULL = ["domingo","segunda","terça","quarta","quinta","sexta","sábado"];
+
+let selDay = null, selTime = null;
+
+/* ---- build the list of open days ---- */
+function buildDays(){
+  const out = [];
+  const start = new Date(CFG.firstDay + "T00:00:00");
+  for (let i = 0; i < CFG.daysAhead; i++){
+    const d = new Date(start);
+    d.setDate(start.getDate() + i);
+    if ((CFG.hours[d.getDay()] || []).length) out.push(d);
+  }
+  return out;
+}
+
+/* ---- deterministic "taken" slots, stable across reloads (only if enabled) ---- */
+function isTaken(d, t){
+  if (!CFG.simulateBookedSlots) return false;
+  const seed = d.getDate() * 31 + parseInt(t) * 7 + d.getMonth();
+  return (seed % 5) === 0;
+}
+
+function renderDays(){
+  const box = document.getElementById("days");
+  box.innerHTML = "";
+  buildDays().forEach(function(d){
+    const el = document.createElement("div");
+    el.className = "day";
+    el.innerHTML = '<div class="dow">' + DOW[d.getDay()] + '</div>' +
+                   '<div class="num">' + d.getDate() + '</div>' +
+                   '<div class="mon">' + MONTH[d.getMonth()] + '</div>';
+    el.onclick = function(){
+      document.querySelectorAll(".day").forEach(function(x){ x.classList.remove("on"); });
+      el.classList.add("on");
+      selDay = d; selTime = null;
+      renderTimes();
+      updateConfirm();
+    };
+    box.appendChild(el);
   });
-  $("bk-nasc").addEventListener("input", function (e) {
-    var v = e.target.value.replace(/\D/g, "").slice(0, 8);
-    e.target.value = v.length > 4 ? v.slice(0, 2) + "/" + v.slice(2, 4) + "/" + v.slice(4) : v.length > 2 ? v.slice(0, 2) + "/" + v.slice(2) : v;
-  });
+}
 
-  function fail(msg, el) {
-    $("bk-error").textContent = msg;
-    if (el) el.focus();
-    return false;
+function renderTimes(){
+  const box = document.getElementById("times");
+  box.innerHTML = "";
+  if (!selDay){ box.innerHTML = '<p class="empty">Selecione um dia acima.</p>'; return; }
+
+  const open = (CFG.hours[selDay.getDay()] || []).filter(function(t){ return !isTaken(selDay, t); });
+  if (!open.length){
+    box.innerHTML = '<p class="empty">Esse dia lotou. Escolhe outro, ou me chama que a gente dá um jeito.</p>';
+    return;
   }
-
-  $("bk-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    $("bk-error").textContent = "";
-    var motivo = $("bk-motivo").value;
-    var nome = $("bk-nome").value.trim();
-    var cel = $("bk-cel").value.replace(/\D/g, "");
-    var nasc = $("bk-nasc").value.trim();
-    if (!motivo) return fail("Escolha o motivo da consulta.", $("bk-motivo"));
-    if (!sel.day) return fail("Escolha um dia.", document.querySelector(".bk-day"));
-    if (!sel.time) return fail("Escolha um horário.", document.querySelector(".bk-slot"));
-    if (nome.split(/\s+/).length < 2) return fail("Escreve o seu nome completo.", $("bk-nome"));
-    if (cel.length < 10) return fail("Confere o celular com DDD.", $("bk-cel"));
-    if (nasc && !/^\d{2}\/\d{2}\/\d{4}$/.test(nasc)) return fail("Data de nascimento no formato dd/mm/aaaa.", $("bk-nasc"));
-    if (!$("bk-ok").checked) return fail("Pra enviar, marque a autorização de uso dos dados.", $("bk-ok"));
-
-    var iso = sel.day.getFullYear() + "-" + String(sel.day.getMonth() + 1).padStart(2, "0") + "-" + String(sel.day.getDate()).padStart(2, "0");
-    var quando = DOWFULL[sel.day.getDay()] + ", " + sel.day.getDate() + " de " + MONTHFULL[sel.day.getMonth()] + ", às " + sel.time;
-    var obs = $("bk-obs").value.trim();
-    var linhas = [
-      "Oi Amanda! Quero agendar pelo site.",
-      "",
-      "Dia: " + quando,
-      "Motivo: " + motivo,
-      "Nome: " + nome,
-      "Celular: " + $("bk-cel").value,
-      nasc ? "Nascimento: " + nasc : null,
-      $("bk-tipo").value,
-      obs ? "Obs.: " + obs : null,
-      "",
-      "[SITE-AGENDAR-" + src + "|" + iso + " " + sel.time + "]"
-    ].filter(function (l) { return l !== null; });
-    var url = Botica.waUrl(linhas.join("\n"));
-
-    Botica.track("booking_request", { wa_tag: "SITE-AGENDAR-" + src, booking_date: iso, booking_time: sel.time });
-    $("bk-again").href = url;
-    $("bk-done").hidden = false;
-    var w = window.open(url, "_blank");
-    if (w) { try { w.opener = null; } catch (err) {} }
-    else location.href = url;
+  open.forEach(function(t){
+    const el = document.createElement("div");
+    el.className = "slot";
+    el.textContent = t;
+    el.onclick = function(){
+      document.querySelectorAll(".slot").forEach(function(x){ x.classList.remove("on"); });
+      el.classList.add("on");
+      selTime = t;
+      updateConfirm();
+    };
+    box.appendChild(el);
   });
+}
 
-  renderDays();
-})();
+function prettyPick(){
+  if (!selDay || !selTime) return "";
+  return DOWFULL[selDay.getDay()] + ", " + selDay.getDate() + " de " +
+         ["janeiro","fevereiro","março","abril","maio","junho","julho",
+          "agosto","setembro","outubro","novembro","dezembro"][selDay.getMonth()] +
+         ", às " + selTime;
+}
+
+function updateConfirm(){
+  const c = document.getElementById("confirm");
+  if (selDay && selTime){
+    document.getElementById("pick").textContent = prettyPick();
+    c.classList.add("on");
+  } else {
+    c.classList.remove("on");
+  }
+}
+
+/* ---- WhatsApp handoff. Source-tagged for the Monday scoreboard. ---- */
+function waLink(msg){
+  return "https://wa.me/" + CFG.whatsapp + "?text=" + encodeURIComponent(msg);
+}
+
+const src = new URLSearchParams(location.search).get("s") || "DIRETO";
+
+document.getElementById("go").onclick = function(){
+  if (!selDay || !selTime) return;
+  const iso = selDay.toISOString().slice(0,10);
+  const msg = "Oi Amanda! Quero agendar minha avaliação.\n\n" +
+              "📅 " + prettyPick() + "\n\n" +
+              "Vim pelo site. [SITE-AGENDAR-" + src + "|" + iso + " " + selTime + "]";
+  window.open(waLink(msg), "_blank", "noopener");
+};
+
+document.getElementById("justtalk").href =
+  waLink("Oi Amanda! Vim pelo site. SORRISO. Queria conversar antes de marcar. [SITE-AGENDAR-CONVERSA-" + src + "]");
+document.getElementById("justtalk").target = "_blank";
+document.getElementById("justtalk").rel = "noopener";
+
+renderDays();
 </script>
 </body>
 </html>
