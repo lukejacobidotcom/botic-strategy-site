@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Avaliar a Botica | Botica Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,500;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/img/logo/botica-mark.svg">
+<link rel="stylesheet" href="/css/botica.css">
+<!--
+  /avaliar/  =  o link fixo de avaliação no Google.
+  Use ESTE endereço na resposta rápida do WhatsApp e no QR code da recepção.
+  Hoje ele abre o perfil da Botica no Google. Pra abrir direto a tela de avaliar, cole o link
+  "Pedir avaliações" do painel do Google Business Profile em /js/botica.js
+  (BOTICA.google.avaliarUrl) e este link passa a abrir direto a tela de avaliação.
+-->
+</head>
+<body class="g-nude" style="min-height:100vh;display:flex;align-items:center">
+<section class="g-nude" style="width:100%">
+  <div class="porque">
+    <img src="/img/logo/botica-mark.svg" alt="" width="39" height="52" style="display:block;margin:0 auto 1rem;height:52px;width:auto">
+    <p class="eyebrow">Botica Clinic</p>
+    <h2>Obrigada por querer <i>contar</i> como foi.</h2>
+    <p id="msg">Abrindo a página de avaliação do Google…</p>
+    <div class="ctarow" style="justify-content:center">
+      <a class="btn btn-p" id="go" href="/homepagev2/">Avaliar no Google</a>
+    </div>
+  </div>
+</section>
+<script src="/js/botica.js"></script>
+<script>
+(function(){
+  var g = (window.BOTICA && window.BOTICA.google) || {};
+  var url = g.avaliarUrl || g.perfilUrl;
+  var go = document.getElementById("go");
+  if (url) {
+    go.href = url;
+    location.replace(url);
+    return;
+  }
+  document.getElementById("msg").textContent = "O link de avaliação ainda está sendo preparado. Se quiser, me conta como foi pelo WhatsApp.";
+  go.textContent = "Contar pelo WhatsApp";
+  go.setAttribute("data-wa-tag", "SITE-AVALIAR");
+  go.setAttribute("data-wa-msg", "Quero contar como foi a minha experiência.");
+  Botica.refreshWa();
+})();
+</script>
+</body>
+</html>
