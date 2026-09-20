@@ -129,6 +129,18 @@ h1 i,h2 i,.si{font-family:var(--serif);font-style:italic;font-weight:500}
 .blist div::before{content:"—";color:var(--terra);font-weight:700;flex-shrink:0}
 .g-forest .blist div::before{color:var(--metro)}
 .g-verde .blist div::before{color:var(--forest)}
+/* Date Night (compacto) + quadrado verde de Valores */
+.duo{display:grid;gap:1.2rem;align-items:stretch;max-width:60em;margin:0 auto}
+@media(min-width:820px){.duo{grid-template-columns:1.55fr 1fr}}
+.dn{border:1.5px solid rgba(168,131,78,.55);border-radius:20px;padding:clamp(1.4rem,3vw,2.1rem);background:rgba(255,255,255,.34)}
+.dn h2{margin-bottom:.2rem}
+.dn .dn-tag{font-family:var(--serif);font-style:italic;font-size:1.12rem;color:#A9563A;margin:0 0 .8rem}
+.dn .dn-body{font-weight:300;opacity:.92;margin-bottom:1.1rem;max-width:40em}
+.vsq{background:var(--verde);color:var(--ink);border-radius:20px;padding:clamp(1.4rem,3vw,1.9rem);display:flex;flex-direction:column;justify-content:center}
+.vsq h3{font-weight:300;font-size:1.45rem;line-height:1.15;margin:.1rem 0 .7rem}
+.vsq h3 i{font-family:var(--serif);font-style:italic}
+.vsq p{font-weight:300;font-size:.95rem}
+.vsq .ctarow{margin-top:1.1rem}
 .story p{font-size:clamp(.98rem,1.9vw,1.1rem);font-weight:300;max-width:44em;margin-bottom:1.05rem;opacity:.92}
 
 .acc{border:1px solid rgba(38,48,28,.24);border-radius:14px;margin-bottom:.8rem;overflow:hidden;background:rgba(255,255,255,.45);max-width:52em}
@@ -312,29 +324,24 @@ footer p{opacity:.88;margin-bottom:.35rem}
 
 <!-- ============ DATE NIGHT — assinatura Botica ============ -->
 <section class="g-nude" id="date-night">
-  <div class="rv" style="max-width:52em;margin:0 auto;border:1.5px solid rgba(168,131,78,.55);border-radius:20px;padding:clamp(1.6rem,4vw,3rem);background:rgba(255,255,255,.34)">
-    <svg viewBox="0 0 26 40" width="26" height="40" fill="none" aria-hidden="true" style="display:block;margin-bottom:.6rem">
-      <g transform="translate(13,7) scale(0.46)">
-        <path d="M0,66 C 0,54 -1,45 0,39" stroke="#A8834E" stroke-width="3" fill="none" stroke-linecap="round"/>
-        <path d="M0,39 C -9,25 -9,4 2,-4 C 12,-9 23,-4 24,7 C 25,14 18,19 12,15 C 16,9 9,8 7,14 C 4,21 2,30 0,39 Z" stroke="#A8834E" stroke-width="3.4" fill="none" stroke-linejoin="round"/>
-        <path d="M8,15 C 6,9 6,1 7,-5" stroke="#C9A24E" stroke-width="5" fill="none" stroke-linecap="round"/>
-      </g>
-    </svg>
-    <p class="eyebrow rv">Assinatura Botica · toda sexta</p>
-    <h2 class="rv">Date <i>Night</i>.</h2>
-    <p class="rv" style="font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,2.4vw,1.5rem);color:var(--brown);margin:-.4rem 0 1.2rem">30 minutos. Sexta à tarde. Você sai pronta.</p>
-    <p class="lead rv">O ritual rápido pra chegar radiante no seu programa. Sem procedimento, sem enrolação: só o seu sorriso no ponto, em meia hora.</p>
-    <div class="blist rv">
-      <div>Limpeza e polimento express, aquela sensação de recém-saída do dentista.</div>
-      <div>Remoção de manchas superficiais de café, vinho e chá, pro sorriso mais claro na hora.</div>
-      <div>Finalização com hálito fresco.</div>
-      <div>Hidratação labial pra fechar o conjunto.</div>
-    </div>
-    <p class="rv" style="font-weight:300;font-size:.95rem;opacity:.9;max-width:44em;margin-top:.2rem">Quer chegar ainda mais pronta? Dá pra somar um retoque de <b style="font-weight:600">botox / harmonização</b> ao seu Date Night. Me conta que eu monto a versão completa pra você.</p>
-    <div class="ctarow rv">
-      <a class="btn btn-p" data-wa="DATENIGHT" href="#">Quero o Date Night</a>
-    </div>
-    <p class="microcopy rv">Sexta é dia. Me chama que eu reservo o seu horário.</p>
+  <div class="duo rv">
+    <article class="dn">
+      <p class="eyebrow">Assinatura Botica · toda sexta</p>
+      <h2>Date <i>Night</i>.</h2>
+      <p class="dn-tag">30 minutos. Sexta à tarde. Você sai pronta.</p>
+      <p class="dn-body">Limpeza e polimento express, remoção de manchas superficiais, hálito fresco e hidratação labial. Dá pra somar um retoque de <b style="font-weight:600">botox / harmonização</b>, se a avaliação indicar.</p>
+      <div class="ctarow">
+        <a class="btn btn-p" data-wa="DATENIGHT" href="#">Quero o Date Night</a>
+      </div>
+    </article>
+    <aside class="vsq">
+      <p class="eyebrow">Valores</p>
+      <h3>Por que não tem <i>preço</i> aqui.</h3>
+      <p>Número sem exame é chute. A faixa eu te passo no WhatsApp, antes de você vir; o valor fechado sai na avaliação, por escrito.</p>
+      <div class="ctarow">
+        <a class="btn btn-s" href="#valores">Como funcionam os valores</a>
+      </div>
+    </aside>
   </div>
 </section>
 
